@@ -1,19 +1,18 @@
 <?php  
 	// TIPOS ACEPTADOS GET Y POST
 /**
- * Rutas Modulo 1 Ejemplo
+ * Rutas Autenticacion de usuarios
  */
-	$this->newRoute('welcome','welcome/welcomeController','welcomeBro');
+	$this->newRoute('login','auth/authController','render');
+	$this->newRoute('login','auth/authController','login','POST');
+	$this->newRoute('logout','auth/authController','logout');
 
 
+	$this->newRoute('alumnos/datos','alumno/alumnoController','datosGenerales');
 
-/**
- * Rutas Modulo 2 Ejemplo
- */
-	$this->newRoute('instrucciones','instruction/instructionController','instrucciones','GET');
-
-/**
- * Rutas Modulo 3 Ejemplo
- */
-	$this->newRoute('instrucciones','instruction/instructionController','mandarinstruccion','POST');
+	$this->newRoute('alumnos/infoKardex', 'alumno/alumnoController', 'getKardex');
+	// academicDataMethod
+	$this->newRoute('alumnos/cargaAcademic', 'alumno/alumnoController', 'academicDataMethod');
+	// getCalif
+	$this->newRoute('alumnos/calificaciones', 'alumno/alumnoController', 'getCalif');
 ?>
