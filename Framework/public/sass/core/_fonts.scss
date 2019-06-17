@@ -4,15 +4,14 @@
 */
 
 /*    Font families    */
-@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+//  @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800&display=swap');
     
 $Heebo:  'Heebo', sans-serif;
-$Welcome: 'Permanent Marker', cursive;
 
 /*    Font sizes    */
 
-$fontMicro:     0.6rem;
+$fontMicro:     0.7rem;
 $fontMini:      0.8rem;
 $fontTiny:      0.9rem;
 $fontText:      0.93rem;
@@ -30,6 +29,8 @@ $fontQuadruple: 4rem;
 .font-triple { font-size: $fontTriple; }
 
 .font-double { font-size: $fontDouble; }
+
+.font-huge { font-size: $fontHuge; }
 
 .font-large {font-size: $fontLarge;}
 
@@ -68,7 +69,7 @@ a {
     font-size: $fontSmall;
 }
 
-li {     
+li { 
     font-family: $Heebo; 
     font-size: $fontSmall;
 }

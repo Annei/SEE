@@ -32,13 +32,19 @@ $dev: false;
 @import './components/header';
 @import './components/cards';
 @import './components/left-main';
+@import './components/tables';
 
 /*      Páginas      */
 
+@import './pages/calificaciones';
+@import './pages/horario';
+@import './pages/kardex';
+@import './pages/login';
+
 @import './pages/example';
 @import './pages/profile';
-@import './pages/welcome';
-@import './pages/instructions';
-
+@import './pages/formatos';
+@import './pages/carga-academica';
+@import './pages/errors.scss';
 
 @if $dev { @include dev; }

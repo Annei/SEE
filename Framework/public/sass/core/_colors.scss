@@ -6,21 +6,17 @@
 
 $black:             #000000;
 $white:             #FFFFFF;
-$darkGray:          #848484;
-$lightGray:         #F6F6F6;
+$darkGray:          #8e8e8e;
+$lightGray:         #E5E5E5;
 $softGray:          #95A5A6;
 $darkBlue:          #2C54B3;
-$lightBlue:         #00B6BF;
+$lightBlue:         #20bcc9;
 $background:        #F6F6F6;
 $formBackground:    #E5E5E5;
+$border:            #E6E7EA;
 
-
-$blue :  #3887ff;
-    
-.color-blue {
-    color: $blue;
-}
-/* Classes de colores */
+$overlayBlue:          rgba(44, 85, 179, 0.849);
+/* Classes de colores para textos*/
 
 .color-white {
     color: $white;
@@ -51,3 +47,18 @@ $blue :  #3887ff;
     color: $softGray;
 }
 
+/* Clases de colores para backgrounds */
+
+.bg-white { background-color: $white; }
+
+.bg-black { background-color: $black; }
+
+.bg-darkBlue { background-color: $darkBlue; }
+
+.bg-lightBlue { background-color: $lightBlue; }
+
+.bg-lightgray { background-color: $lightGray; }
+
+.bg-darkgray { background-color: $darkGray; }
+
+.bg-softgray { background-color: $softGray; }

@@ -1,6 +1,6 @@
 <?php  
 // PROJECT PATH
-	define('URL', 'http://localhost:8080/SEETEST/');
+	define('URL', 'http://localhost:8012/seetest/SEE/');
 
 
 // DATABASE MYSQL

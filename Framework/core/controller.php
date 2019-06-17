@@ -2,6 +2,11 @@
 /**
  * 
  */
+
+
+require 'controllers/helpers/authValidator.php';
+
+
 class Controller 
 {
 	public  $modeln   = "SIN_MODEL";		
@@ -10,6 +15,7 @@ class Controller
 
 	public function __construct()
 	{
+        session_start();
 		// echo "<br> Controller extended <br>";
 		$this->view =  new View();
 	}
@@ -35,6 +41,15 @@ class Controller
 
     public function externRedirect($link){
         header("Location: ".$link);
+    }
+    // 
+    public function validatorAuth($auth)
+    {
+        if ($auth->makeAuth()) {
+            return true;
+        }else{
+            // $this->localRedirect('');
+        }
     }
 	
 }

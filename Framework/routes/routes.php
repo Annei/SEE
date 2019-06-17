@@ -10,9 +10,4 @@
 
 	$this->newRoute('alumnos/datos','alumno/alumnoController','datosGenerales');
 
-	$this->newRoute('alumnos/infoKardex', 'alumno/alumnoController', 'getKardex');
-	// academicDataMethod
-	$this->newRoute('alumnos/cargaAcademic', 'alumno/alumnoController', 'academicDataMethod');
-	// getCalif
-	$this->newRoute('alumnos/calificaciones', 'alumno/alumnoController', 'getCalif');
 ?>

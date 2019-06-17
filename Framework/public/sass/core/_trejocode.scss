@@ -107,6 +107,10 @@ img {
     width: 90%;
 }
 
+.container-data {
+    width: 92%;
+}
+
 .responsive-img {
     display: flex;
     justify-content: flex-start;
@@ -133,6 +137,21 @@ img {
     flex-wrap: wrap;
 }
 
+.gutters {
+    margin: 0 auto;
+}
+
+.gutters > div {
+    margin: 12px;
+}
+
+.gutters > div:first-of-type {
+    margin-left: 0;
+}
+
+.gutters > div:last-of-type {
+    margin-right: 0;
+}
 
 
 /*    ALIGNMENT    */
@@ -238,7 +257,9 @@ img {
 /*    NOTEBOOKS, IPADS DEVICES    */
 
 @media screen and (max-width: 992px) {
-    
+    .break-ipad {
+        flex-direction: column;
+    }
 }
 
 /*    TABLETS DEVICES    */
@@ -251,7 +272,11 @@ img {
 
     .white-space-64 {
         height: 32px;
-    }      
+    }    
+
+    .gutters > div {
+        margin: 0;
+    }
     
 }
 
