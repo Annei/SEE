@@ -128,7 +128,19 @@ public function horario(){
 
 // UZIEL
 
-  
+public function getcalif()
+{
+	echo "Estoy buscando las  califiaciones prro <br><br>";
+	
+	// Obtener el periodo
+	$this ->model->getPeriodol(201600088);
+	// aqui pasas tambien el periodo en el segundo parametro pero formateado
+	$dbf= $this ->model->getcalif(201600088,3192);
+	die(var_dump($dbf));
+}
+
+
+
 
 }
 ?>
