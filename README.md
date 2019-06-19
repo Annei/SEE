@@ -1,6 +1,2 @@
 #SEE2
-
-#Rama de Back End
-
-
-#Encargado Pedrito
+#Version prototipo 2
