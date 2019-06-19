@@ -10,7 +10,7 @@ class AlumnoModel extends Model
 		parent::__construct();
 		$this->table = 'sinTablita:3';
 	}
-
+	//MI CAMBIO CHIDO
 	public function getDbfUser($matricula){
 		$con = $this->DB->DBFconnect('DALUMN');
 		$aux = null;
