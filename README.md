@@ -1,6 +1,2 @@
 #SEE2
-
-
-#Rama 
-
-#Jefazos 
+#Version prototipo 2
