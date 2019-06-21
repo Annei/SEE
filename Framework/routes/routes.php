@@ -10,4 +10,6 @@
 
 	$this->newRoute('alumnos/datos','alumno/alumnoController','datosGenerales');
 
+	$this->newRoute('alumnos/horario','prototipo/segundoController','buscarHorario');
+
 ?>
