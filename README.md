@@ -1,7 +1,4 @@
-#SEE
 
+#SEE2
+#Version prototipo 2
 
-#Rama de Front End
-
-
-#Lider Katherine
