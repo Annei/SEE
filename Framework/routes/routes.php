@@ -11,5 +11,6 @@
 	$this->newRoute('alumnos/datos','alumno/alumnoController','datosGenerales');
 
 	$this->newRoute('alumnos/horario','prototipo/segundoController','buscarHorario');
+	$this->newRoute('alumnos/kardex', 'kardex/kardexController','getKardex');
 
 ?>
