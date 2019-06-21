@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="">
 </head>
 <body>
-    <form class="" method="POST" action="login">
+    <form class="" method="POST" action="login" id="login">
     <div class="main flex">
         <div class="column login">
 

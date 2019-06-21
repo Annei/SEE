@@ -146,6 +146,8 @@ class AuthController extends Controller
 
 					}else{
 						// echo "credenciales invalidas usuario no existe";
+						include './views/alerts/Headers.php';
+						echo '<script language="javascript" src="/SEE/framework/public/jquery/Warning.js"></script>';
 						$this->view->error = "Credenciales invalidas :c";
 						$this->render();
 					}
