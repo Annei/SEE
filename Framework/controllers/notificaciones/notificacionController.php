@@ -51,7 +51,7 @@ class NotificacionController extends Controller
 
 		echo "<pre>";
 		print_r($carreras);
-		echo "</pre>";
+		echo "</pre> xd";
 
 	}
 
