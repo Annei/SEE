@@ -504,6 +504,38 @@ public function getPeriodo($clavedeplan)
 // FIN PART DE LUCIO
 
 
+
+#CAMBIAR CONTRASEÑA
+
+
+
+
+public function cambiaPass($matricula, $pass){
+		
+		$items = [];
+		try{
+
+
+			$sql = "call cambia_pass(:matricula,:pass);";
+			$query = $this->DB->MYSQLconnect()->prepare($sql);
+			
+			$data = [
+				':matricula' 	=> trim($matricula),
+				':pass'	 		=> $pass,
+			];
+			
+			$query->execute($data);
+			
+			// $this->DB = null;
+			return true;
+
+		}catch(PDOException $e){
+			echo "<br> error ".$e." <br>";
+			return false;
+		}
+
+	}
+
 }
 
 

@@ -12,4 +12,28 @@
 
 	$this->newRoute('alumnos/horario','prototipo/segundoController','buscarHorario');
 
+	$this->newRoute('alumnos/pass','alumno/alumnoController','cambiaPass');
+
+	$this->newRoute('addadmin','auth/authController','crear_admin');
+
+	$this->newRoute('crearNoticia','notificaciones/notificacionController','crearNoticia');
+	$this->newRoute('noticias','notificaciones/notificacionController','traerNoticia');
+	$this->newRoute('editarn','notificaciones/notificacionController','editarNotificacion');
+	$this->newRoute('carreras','notificaciones/notificacionController','carreras');
+
+	// carreras
+
+/*cambiaPass
+ *cread_admin
+
+- CAMBIAR CONTRASEÑA
+- Crear admin
+- Crear Notificaciones
+
+- Ver todas las notificaciones
+- Editar Notificaciones 
+- traer carreras
+
+
+ */
 ?>
