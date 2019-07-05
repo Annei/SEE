@@ -1,11 +1,11 @@
 <?php  
 // PROJECT PATH
-	define('URL', 'http://localhost:8012/seetest/SEE/');
+	define('URL', 'http://localhost:8080/PROYECTOUNI/SEE/Framework/');
 
 
 // DATABASE MYSQL
 	define('HOST', 'localhost');
-	define('DB', 'seetest');
+	define('DB', 'see');
 	define('USER', 'root');
 	define('PASSWORD', "");
 	define('CHARSET', 'utf8mb4');
