@@ -30,6 +30,9 @@
 
 	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin');
 	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin', 'POST');
+
+	$this->newRoute('alumnos/kardex','kardex/kardexController','getKardex');
+	$this->newRoute('alumnos/calificaciones','calificaciones/calificacionesController','getCalificaciones');
 	
 	// carreras
 
