@@ -209,7 +209,7 @@
                                                     echo $this->horario['lunes']['08:40']['nombre'];
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['08:40'])){
-                                                    echo $this->horario['miercoles']['08:40']['nombre'];
+                                                    echo $this->horario['martes']['08:40']['nombre'];
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['08:40'])){
                                                     echo $this->horario['miercoles']['08:40']['nombre'];
@@ -337,7 +337,7 @@
                                                     echo $this->horario['lunes']['15:40']['nombre'];
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['15:40'])){
-                                                    echo $this->horario['miercoles']['15:40']['nombre'];
+                                                    echo $this->horario['martes']['15:40']['nombre'];
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['15:40'])){
                                                     echo $this->horario['miercoles']['15:40']['nombre'];
