@@ -20,6 +20,7 @@
 	$this->newRoute('noticias','notificaciones/notificacionController','traerNoticia');
 	$this->newRoute('editarn','notificaciones/notificacionController','editarNotificacion');
 	$this->newRoute('carreras','notificaciones/notificacionController','carreras');
+	$this->newRoute('horario/horario','horario/horarioController','horario2');
 
 	// carreras
 
