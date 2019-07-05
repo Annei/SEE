@@ -66,6 +66,7 @@ class AuthController extends Controller
 						
 						$_SESSION["usuario"]=[
 							'matricula'  => $user['matricula'],
+							'nombre'	 => $user['name'],
 							'index'      => $user['indexx'],
 							'type'       => $user['type'],
 							# Datos que pueden tener o no
@@ -110,11 +111,11 @@ class AuthController extends Controller
 						echo "<br>Crear registro";
 						if ($this->model->addUser($alumn)) {
 							$_SESSION["usuario"]=[
-								'matricula'  => $alumn['matricula'],
+								'matricula'  => trim($alumn['matricula']),
 								'index'      => -1,
 								'type'       => 'alumno',
 								# Datos que pueden tener o no
-								'email'      => $alumn['matricula'].'@upqroo.edu.com', 
+								'email'      => trim($alumn['matricula']).'@upqroo.edu.com', 
 								'email_pass' => 'secret2',
 								#solo los admin tienen este campo (en esta tabla MYSQL)
 								'carrera'    => '--',
@@ -176,6 +177,13 @@ class AuthController extends Controller
 		}
 		$this->localRedirect('login');
 	}
+
+
+
+	public function crear_admin(){
+		// $matricula, $nombre, $pass, $email,$carrera, $type
+		$this->model->addAdmin(201600321, 'Lolito Fernandez','pass','201600321@gmail.com',1,'admin');
+	} 
 
 
 }

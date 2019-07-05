@@ -46,14 +46,14 @@ class AuthModel extends Model
               		// $aux = $fila;
               		$aux = [
 							'matricula' => $fila['ALUCTR'],
-							'nombre'    => $fila['ALUAPP'].' '.$fila['ALUAPM'].' '.$fila['ALUNOM'],
-							'cumple'    => $fila['ALUNAC'],
-							'direccion' => $fila['ALUTCL'].' '.$fila['ALUTNU'].' '.$fila['ALUTCO'],
-							'cp'        => $fila['ALUTCP'],
-							'cel'       => $fila['ALUTTE1'],
-							'tel'       => $fila['ALUTTE2'],
-							'email'     => $fila['ALUTMAI'],
-							'curp'      => $fila['ALUCUR'],
+							'nombre'    => trim($fila['ALUAPP']).' '.trim($fila['ALUAPM']).' '.trim($fila['ALUNOM']),
+							'cumple'    => trim($fila['ALUNAC']),
+							'direccion' => trim($fila['ALUTCL']).' '.trim($fila['ALUTNU']).' '.trim($fila['ALUTCO']),
+							'cp'        => trim($fila['ALUTCP']),
+							'cel'       => trim($fila['ALUTTE1']),
+							'tel'       => trim($fila['ALUTTE2']),
+							'email'     => trim($fila['ALUTMAI']),
+							'curp'      => trim($fila['ALUCUR']),
 							'sex'       => (strcmp($fila['ALUSEX'],'1') == 0 ? 'Hombre': 'Mujer')
               		];
               		break;
@@ -74,23 +74,54 @@ class AuthModel extends Model
 		$items = [];
 		try{
 
-
-			// CALL addAlumno(201600114,'secret','email@gmail.com',-1);
-			// $sql = "CALL addAlumno(".
-			// 	$alumn['matricula'].",
-			// 	'secret','".	
-			// 	$alumn['email']."',
-			// 	-1
-			// );";
-
-			$sql = "CALL addAlumno(:matricula,:pass,:email,:index);";
+			$sql = "CALL addAlumno(:matricula,:nombre,:pass,:email,:index);";
 			$query = $this->DB->MYSQLconnect()->prepare($sql);
 			
 			$data = [
-				':matricula' => $alumn['matricula'],
+				':matricula' => trim($alumn['matricula']),
+				':nombre'	 => $alumn['nombre'],
 				':pass'      => 'secret',
-				':email'     => $alumn['matricula'].'@upqroo.alumnos.com',
+				':email'     => trim($alumn['matricula']).'@estudiantes.upqroo.edu.mx',
 				':index'     => -1,
+			];
+			
+			$query->execute($data);
+			
+			// $this->DB = null;
+			return true;
+
+		}catch(PDOException $e){
+			echo "<br> error ".$e." <br>";
+			return false;
+		}
+
+	}
+
+
+	
+	/**
+	 * AGREGAR UN NUEVO ADMINISTRADOR
+	 * @param INT 		$matricula [description]
+	 * @param STRING 	$nombre    [description]
+	 * @param TEXT 		$pass      ENCRIPTADO
+	 * @param EMAIL 	$email     [description]
+	 * @param INT 		$carrera   [description]
+	 */
+	public function addAdmin($matricula, $nombre, $pass, $email,$carrera, $type){
+		
+		$items = [];
+		try{
+
+			$sql = "CALL agregar_admin(:matricula,:nombre,:pass,:email,:carrera, :type);";
+			$query = $this->DB->MYSQLconnect()->prepare($sql);
+			
+			$data = [
+				':matricula' => $matricula,
+				':nombre'	 => $nombre,
+				':pass'      => $pass,
+				':email'     => $email,
+				':carrera'   => $carrera,
+				':type'      => $type,
 			];
 			
 			$query->execute($data);
