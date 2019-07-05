@@ -5,17 +5,22 @@
 
 .profile {
     // font-family: $Heebo;
-    background-color: $background;
+    background-color: $white;
+
+    .container-gnral-info {
+        height: 100vh;
+    }
 
     .container-info-student{
         background: $lightGray;
         width: 315px;
-        min-height: 84vh;
+        min-height: 100%;
         padding-top: $paddingHuge;
     }
     
     .frm-info-gral{
         padding-top: $paddingNormal;
+        
 
         .container-input-info-gral{
             width: 90%;
@@ -41,9 +46,107 @@
                 width: 100%;
             }
         }
+        .container-info-student{
+            width: 100%;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
+    .container-img-profile{
+        img{
+            margin-top: $paddingExtra;
+            width: 100px !important;
+            height: 100px !important;
+        }
+    }
+    .header-content{
+        h1, h2{
+            padding-left: 3rem;
+        }
+    }
+
+
+    .profile {
+        .frm-info-gral{
+            padding-top: $paddingNormal;
+            .container-input-info-gral{
+                width: 100%;
+            }
+        }
+        .container-info-student{
+            width: 100%;
+            .column{
+                padding: $paddingMedium $paddingHuge;
+            }
+        }
+    }
+    .container-info-student{
+        width: 100%;
+        .column{
+            padding: $paddingMedium $paddingNormal;
+        }
+    }
+
     
 }
+
+
+/**********************************************/
+/**********************************************/
+/**********************************************/
+/**********************************************/
+ /**
+    * profile.scss
+    * @description: Estilos de la página de perfil
+**/
+
+// .profile {
+//     // font-family: $Heebo;
+//     background-color: $white;
+
+//     .container-gnral-info {
+//         height: 100vh;
+//     }
+
+//     .container-info-student{
+//         background: $lightGray;
+//         width: 315px;
+//         min-height: 100%;
+//         padding-top: $paddingHuge;
+//     }
+    
+//     .frm-info-gral{
+//         padding-top: $paddingNormal;
+        
+
+//         .container-input-info-gral{
+//             width: 90%;
+//             padding-top: $paddingMedium;
+//         }
+//         .container-input-large{
+//             width: 100%;
+//             padding-top: $paddingMedium;
+//         }
+//     }
+
+// }
+
+// @media screen and (min-width: 1440px) {
+
+// }
+
+// @media screen and (max-width: 992px) {
+//     .profile {
+//         .frm-info-gral{
+//             padding-top: $paddingNormal;
+//             .container-input-info-gral{
+//                 width: 100%;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 768px) {
+    
+// }

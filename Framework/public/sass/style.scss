@@ -31,8 +31,11 @@ $dev: false;
 @import './components/inputs';
 @import './components/header';
 @import './components/cards';
-@import './components/left-main';
 @import './components/tables';
+@import './components/modals';
+
+
+@import './components/left-main';
 
 /*      Páginas      */
 
@@ -45,6 +48,8 @@ $dev: false;
 @import './pages/profile';
 @import './pages/formatos';
 @import './pages/carga-academica';
+@import './pages/carga-academica-pdf';
 @import './pages/errors.scss';
+@import './pages/noticias';
 
 @if $dev { @include dev; }

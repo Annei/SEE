@@ -4,8 +4,7 @@
 */
 
 /*    Font families    */
- @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
-//  @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800&display=swap');
     
 $Heebo:  'Heebo', sans-serif;
 
@@ -53,7 +52,7 @@ $fontQuadruple: 4rem;
 
 $weightLight: 300;
 $weightRegular: 400;
-$weightSemi: 600;
+$weightSemi: 500;
 $weightBold: 700;
 
 .weight-bold { font-weight: $weightBold; }
