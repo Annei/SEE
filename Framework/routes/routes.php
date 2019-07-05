@@ -21,7 +21,14 @@
 	$this->newRoute('noticias','notificaciones/notificacionController','traerNoticia');
 	$this->newRoute('editarn','notificaciones/notificacionController','editarNotificacion');
 	$this->newRoute('carreras','notificaciones/notificacionController','carreras');
+	$this->newRoute('horario/horario','horario/horarioController','horario2');
 
+	$this->newRoute('alumnos/formatos','formatos/formatosController','formatos');
+	$this->newRoute('alumnos/Descargar','formatos/formatosController','Descargar');
+
+	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin');
+	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin', 'POST');
+	
 	// carreras
 
 /*cambiaPass
