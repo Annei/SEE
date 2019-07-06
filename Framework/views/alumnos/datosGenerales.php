@@ -69,7 +69,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>horario/horario" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
                                         <div class = "column full">
