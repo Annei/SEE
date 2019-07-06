@@ -20,9 +20,9 @@ class CargapdfController extends Controller
 			// $this->localRedirect('login');		
 		
 		parent::__construct();
-		$this->modeln    = "Carga"; 
-		$this->path      = "carga";
-		$this->routeView = "cargas/academicDataPdf";
+		$this->modeln    = "Cargapdf"; 
+		$this->path      = "cargapdf";
+		$this->routeView = "cargas/carga-academica-pdf";
 	}
 
 	public function render(){

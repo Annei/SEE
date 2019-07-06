@@ -22,7 +22,7 @@ class CargaController extends Controller
 		parent::__construct();
 		$this->modeln    = "Carga"; 
 		$this->path      = "carga";
-		$this->routeView = "cargas/academicDataMethod";
+		$this->routeView = "cargas/carga-academica";
 	}
 
 	public function render(){
