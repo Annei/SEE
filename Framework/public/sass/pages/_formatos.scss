@@ -8,7 +8,7 @@
 
     .container-cards {
         display: grid;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         grid-gap: 24px;
     }
     .box-file {
@@ -50,3 +50,25 @@
     .btn-archivos{padding: $paddingNormal $paddingHuge;}
 }
 
+
+@media screen and (min-width: 1440px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .formatos {
+        .container-cards {
+            flex-direction: column;
+            display: flex;
+        }
+
+        .box-file {
+            margin-bottom: 16px;
+        }
+
+    }
+}
