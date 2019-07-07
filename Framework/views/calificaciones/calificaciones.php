@@ -21,82 +21,105 @@
     <div class="main flex">
         <div class="column calificaciones full">
             <div class="row-responsive">
-                    <div class="column menu-left align-center justify-center">
-                            <div class="white-space-24"></div>
-                            <div class="responsive-img item-left justify-center align-center">
-                                <img src="<?php echo constant('URL'); ?>public/img/upqroo-newlogo@2x.png" alt="responsive img" title="responsive img" class="cover-img "/>
-                            </div>
-                            <div class="white-space-32"></div>
-                            <div class="white-space-16"></div>
-                            <div class="column main align-center auto">
-                            <a href="profile.html" class="item-left ">
-                                <div class="row  justify-center align-start">
+                <div class="column align-center justify-center menu" tabindex="0">
+                    <div class="smartphone-menu-trigger"></div>
+                    <div class="white-space-24"></div>
+
+                    <div class="responsive-img item-left justify-center align-center logo">
+                        <img src="<?php echo constant('URL'); ?>public/img/upqroo-newlogo@2x.png" alt="responsive img" title="responsive img" class="cover-img "/>
+                    </div>
+
+                    <div class="white-space-32"></div>
+                    <!-- <div class="white-space-16"></div> -->
+                    
+                    <div class="column main align-center auto">
+                        <div class="menu-options">
+                            <a href="profile.html" class="item-left">
+                                <div class="row justify-center align-start">
+                                    <div class="column icon align-center"><i class="fa fa-user"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Datos generales</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="carga-academica.html" class="item-left ">
+                            
+                            <a href="carga-academica.html" class="item-left">
                                 <div class="row justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-university"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Carga académica</h4>
                                     </div>                        
                                 </div>
                             </a>
-                            <a href="calificaciones.html" class="item-left ">
+
+                            <a href="calificaciones.html" class="item-left">
                                 <div class="row justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-star"></i></div> 
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Calificaciones</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="kardex.html" class="item-left ">
+
+                            <a href="kardex.html" class="item-left">
                                 <div class="row justify-center">
+                                    <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
                                     <div class="column full">
                                         <h4 class="color-white weight-regular font-small">Kardex</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="horario.html" class="item-left ">
+
+                            <a href="horario.html" class="item-left">
                                 <div class="row justify-center">
+                                    <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Horario</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="noticias.html" class="item-left ">
+
+                            <a href="noticias.html" class="item-left">
                                 <div class="row justify-center">
+                                    <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Noticias</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="formatos.html" class="item-left ">
+
+                            <a href="formatos.html" class="item-left">
                                 <div class="row justify-center">
+                                    <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Formatos</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="item-left ">
+
+                            <a href="" class="item-left">
                                 <div class="row justify-center">
+                                    <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
                                     </div>
                                 </div>
                             </a>
-                            <a href="login.html" class="item-left ">
+
+                            <a href="login.html" class="item-left">
                                 <div class="row item-left justify-center">
+                                    <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
                                     <div class = "column full">
                                         <h4 class="color-white weight-regular font-small">Cerrar Sesión</h4>
                                     </div>
                                 </div>
                             </a>
-                            </div>
-                    </div>                
-                <div class="column align-center">
+                        </div>
+                    </div>
+                </div>              
+                <div class="column align-center body">
                 <div class="row-responsive full">
-                        <div class="row-responsive justify-center header-tittle align-center" style="background-image: url(<?php echo constant('URL'); ?>/public/img/new-footer-blue.png)">
+                        <div class="row-responsive justify-center header-tittle align-center" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
                             <div class="column container-data align-start header-content">
                                 <div class="row auto">
                                     <div class="column auto">
@@ -118,7 +141,7 @@
                                         <div class="column align-start justify-center">
                                             <h4><?php echo $_SESSION['usuario']['matricula'] ?></h4>
                                             <div class="white-space-16"></div>
-                                            <p class="color-darkBlue font-small">Numero de control</p>
+                                            <p class="color-darkBlue font-small">Matrícula</p>
                                         </div>
                                         <div class="column align-end justify-center auto">
                                             <i class="fas fa-id-badge fa-3x color-lightBlue"></i>
@@ -179,55 +202,63 @@
                                 $parcial5 = $calificacion['Parcial5'];
                                 $clave = $calificacion['Clave'];
                             ?>
+
                             <div class="row-responsive">
                                 <div class="column full">
                                     <div class="row align-center subject-info">
                                         <h3 class="uppercase color-darkBlue">
                                             <?php echo $nombreMateria;?>
                                         </h3>
-                                        <!-- <p class="profe-name uppercase">( Cristhian de jesus dominguez villegas )</p>  -->
-                                    </div>
+                                        <!-- <p class="profe-name uppercase">( Cristhian de jesus dominguez villegas )</p> -->
+                                    </div> <!--/.professor name-->
+
                                     <div class="white-space-8"></div>
+
                                     <div class="row">
                                         <div class="table-responsive full">
-                                            <table>
-                                                <thead class="capitalize">
-                                                    <tr>
-                                                        <th>clave</th>
-                                                        <th>re</th>
-                                                        <th>calificacion</th>
-                                                        <th>cuatrimestre</th>
-                                                        <th class="uppercase">tc</th>
-                                                        <th>t1</th>
-                                                        <th>t2</th>
-                                                        <th>t3</th>
-                                                        <th>t4</th>
-                                                        <th>t5</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="uppercase"><?php echo $clave; ?></td>
-                                                        <td>-</td>
-                                                        <td>9.0</td>
-                                                        <td>09</td>
-                                                        <td>9.0</td>
-                                                        <td><?php echo $parcial1; ?></td>
-                                                        <td><?php echo $parcial2; ?></td>
-                                                        <td><?php echo $parcial3; ?></td>
-                                                        <td><?php echo $parcial4; ?></td>
-                                                        <td><?php echo $parcial5; ?></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <table>
+                                            <thead class="capitalize">
+                                                <tr>
+                                                    <th>clave</th>
+                                                    <th>re</th>
+                                                    <th>calificacion</th>
+                                                    <th>cuatrimestre</th>
+                                                    <th class="uppercase">tc</th>
+                                                    <th>t1</th>
+                                                    <th>t2</th>
+                                                    <th>t3</th>
+                                                    <th>t4</th>
+                                                    <th>t5</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="uppercase"><?php echo $clave; ?></td>
+                                                    <td>-</td>
+                                                    <td>9.0</td>
+                                                    <td>09</td>
+                                                    <td>9.0</td>
+                                                    <td><?php echo $parcial1; ?></td>
+                                                    <td><?php echo $parcial2; ?></td>
+                                                    <td><?php echo $parcial3; ?></td>
+                                                    <td><?php echo $parcial4; ?></td>
+                                                    <td><?php echo $parcial5; ?></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div> <!--score table-->
+                                </div>                          
+                            </div> <!--./end table-->
+
                             <div class="white-space-24"></div>
+
                             <?php
                             }
                             ?>
+
+                            <div class="white-space-32"></div>
+
                         </div>
                     </div> <!--/.content-->
                     
