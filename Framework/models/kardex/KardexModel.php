@@ -1,3 +1,4 @@
+
 <?php
 class KardexModel extends Model
 {
@@ -237,4 +238,5 @@ class KardexModel extends Model
 		
 	}
 }
+
 ?>
