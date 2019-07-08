@@ -27,7 +27,7 @@ table{
         padding-left: $paddingNormal;
         font-weight: $weightSemi;
         
-        &:first-child{ padding-left: $paddingSemi; }
+      //  &:first-child{ padding-left: $paddingSemi; }
     }
 
     thead tr{ 
@@ -38,7 +38,7 @@ table{
 
     thead tr th { 
         color: $white; 
-        font-weight: $weightLight;
+        font-weight: $weightRegular;
     }
     tbody tr td{
         color: $darkGray; 
@@ -70,7 +70,7 @@ table{
         padding-left: $paddingNormal;
         font-weight: $weightSemi;
         
-        &:first-child{ padding-left: $paddingMedium; }
+       // &:first-child{ padding-left: $paddingMedium; }
     }
 
     tbody td{ 

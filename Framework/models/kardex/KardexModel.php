@@ -1,3 +1,4 @@
+
 <?php
 class KardexModel extends Model
 {
@@ -141,6 +142,32 @@ class KardexModel extends Model
 			return round($promedio, 2);
 		}
 	}
+	public function getMateriasKardex($claveCarrera,$clavePeriodo){
+		$con = $this->DB->DBFconnect('DGRUPO');
+		$aux = 0;
+		$Materias = array();
+		if ($con) {
+			$numero_registros = dbase_numrecords($con);
+		    for ($i = 1; $i <= $numero_registros; $i++) {
+				$fila = dbase_get_record_with_names($con, $i);
+		        if(strcmp($fila['CARCVE'],$claveCarrera)==0){
+					if(strcmp($fila['PLACVE'],$clavePeriodo)==0){
+						$ClavePla = $fila['PDOCVE'];
+						$ClaveCarr = $fila['CARCVE'];
+						$ClavePer = $fila['PLACVE'];
+						$Materr = $fila['MATCVE'];
+						array_push($Materias,$Materr);
+
+						
+					} 
+				}              
+		    }
+	        dbase_close($con);
+			return $Materias;
+		}
+		return null;
+	}
+	
     /* Retorna la informacion necesaria para la vista del kardex.
 	 * La informacion de los creditos la obtiene del metodo creditos.
 	 * La informacion del kardex la obtiene del DBF DKARDE.
@@ -163,13 +190,8 @@ class KardexModel extends Model
 		$datos = $this->DB->DBFconnect("DKARDE");
 		$info = array();
 		$auxClase = new KardexModel;
-
-		$info[0]['creditos'] = $auxClase->creditos($matricula);
-		$info[1]['porcentaje'] = $auxClase->porcentaje($matricula);
-		$info[2]['promedio'] = $auxClase->promedio($matricula);
-
+		
 		if($datos){
-
 			$numero_registros = dbase_numrecords($datos);
 			for($i = 1; $i <= $numero_registros; $i++){
 				
@@ -193,5 +215,28 @@ class KardexModel extends Model
 			return $info;
 		}
 	}
+	public function getMateriasTotales($claveCarrera,$clavePeriodo){
+		$con = $this->DB->DBFconnect('DGRUPO');
+		$aux = 0;
+		$materias = array();
+		if ($con) {
+			$numero_registros = dbase_numrecords($con);
+          for ($i = 1; $i <= $numero_registros; $i++) {
+			  $fila = dbase_get_record_with_names($con, $i);
+              if(strcmp($fila['CARCVE'],$claveCarrera)==0){
+					if(strcmp($fila['PLACVE'],$clavePeriodo)==0){
+ 						$clavmater =$fila['MATCVE'];
+ 						array_push($materias, $clavmater);
+					}
+				 }              
+          }
+          dbase_close($con);
+		  return $materias;
+		
+		}
+		return null;
+		
+	}
 }
+
 ?>

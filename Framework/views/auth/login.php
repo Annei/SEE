@@ -18,53 +18,37 @@
     <link rel="shortcut icon" href="">
 </head>
 <body>
-    <form class="" method="POST" action="login" id="login">
     <div class="main flex">
-        <div class="column login">
-
-            <div class="row background-login" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue2.png)">
+        <div class="column login full">
+            <div class="row background-login" >
                 <div class="column justify-center align-center">
-                    <div class="row container">
-                        <div class="column card-login">
-                            <div class="row">
-                                <div class="column align-start justify-center">
+                    <div class="row">
+                        <div class="column left justify-center align-center" style="background-image: url(<?php echo constant('URL'); ?>public/img/leftblue.jpg)">
+                                <div class="container responsive-img item-left justify-center align-center">
+                                    <img src="<?php echo constant('URL'); ?>public/img/upqroonew.png" alt="Universidad Politecnica" title="Universidad Politecnica" class="cover-img logo"/>
+                                </div>
+                        </div>
+                        
+                        <div class="column right align-center justify-center">
+                            <div class="row container justify-center">
+                                <form class="column form-data" method="POST" action="login" id="login">
+                                    <div class="row responsive-img item-left justify-center align-center">
+                                        <img src="<?php echo constant('URL'); ?>public/img/politecnica.jpg" alt="Universidad Politecnica" title="Universidad Politecnica" class="cover-img logo-mobile"/>
+                                    </div>
+                                    <h1 class="color-darkBlue font-double text-center title">UNIVERSIDAD POLITÉCNICA DE QUINTANA ROO</h1>
                                     <div class="white-space-24"></div>
-                                    <div class="row-responsive">
-                                        <div class="column text-center">
-                                            <h1 class="uppercase tittle color-darkBlue">Universidad Politecnica de Quintana Roo</h1>
-                                        </div>
-                                    </div>
-
+                                    <p class="color-darkgray font-medium text-center">Introduzca sus datos de acceso</p>
                                     <div class="white-space-32"></div>
-                                    
-                                    <div class="row-responsive">
-                                        <div class="column text-center">
-                                            <h3>Introduzca sus datos de acceso</h3>
-                                        </div>
-                                    </div>
-                                    
+                                   
+                                    <input type="text" name="matricula" placeholder="Matricula" class="input input-form" required>
+                                    <div class="white-space-24"></div>
+                                    <input type="password" name="pass" placeholder="Contraseña" class="input input-form" required>
                                     <div class="white-space-32"></div>
+                                    <button class="btn btn-login  bg-darkBlue color-white font-regular weight-semi">
+                                            INGRESAR 
+                                    </button>
 
-                                    <div class="row-responsive">
-                                        <div class="column auto justify-center align-center icon-form">
-                                            <i class="fa fa-user-graduate fa-2x"></i>
-                                        </div>
-                                        <div class="column">
-                                            <input type="text" name="matricula" placeholder="Matr&iacute;cula" class="input input-form" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="white-space-32"></div>
-                                    
-                                    <div class="row-responsive">
-                                        <div class="column auto justify-center align-center icon-form">
-                                            <i class="fa fa-key fa-2x"></i>
-                                        </div>
-                                        <div class="column">
-                                            <input type="password" name="pass" placeholder="Contraseña" class="input input-form" required>
-                                        </div>
-                                    </div>
-
+                                    <!-- Errores inico (Mover a donde vayan)-->
                                     <div class="white-space-32"></div>
 
                                     
@@ -77,36 +61,24 @@
 
                                         <div class="white-space-32"></div>
                                     <?php endif ?>
+                                    <!--Errores fin-->     
                                     
-
-                                    <div class="row-responsive justify-center">
-                                        <div class="column">
-                                            <button class="btn btn-login font-regular weight-semi uppercase">Ingresar</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="white-space-32"></div>
-
-                                    <div class="row-responsive justify-center">
-                                        <a href="#" class="color-darkBlue">¿Olvid&oacute; su contraseña?</a>
-                                    </div>
                                     <div class="white-space-24"></div>
-                                </div> <!--/.contenedor-->
+                                    <div class="row justify-center">
+                                   <!-- <a class="color-lightBlue weight-semi text-center">¿Olvidaste tu contraseña?</a> -->
+                                    </div>
+                                </form>                               
                             </div>
-                        </div> <!--/.card-login-->
+                        </div> 
                     </div>
 
-                    <div class="row-responsive derechos justify-center">
-                        <p class="color-white">
-                            Queda totalmente prohibido reproducir o alterar total o parcialmente, por cualquier forma o medio, cada uno de los elementos (graficos, textos, etc.) que integran este sitio web, sin la correspondiente autorizacion de la Universidad Politecnica de Quintana Roo.
-                        </p>
-                    </div>
+                   
                 </div>
             </div> <!--/.background login-->
             
         </div> <!--/.column login-->
 
     </div> <!--/.main flex-->
-    </form>
+    
 </body>
 </html>

@@ -1,38 +1,61 @@
 /**
     * login.scss
     * @description: Estilos del login
-    * @author: Jazmin Pool
+    * @author: Katherine Felix 
 **/
 
-.login{
-    .background-login{
-        position: relative;
-        width: 100%; 
+.login {
+
+    height: 100vh;
+    background-color: $white;
+
+    .right, .left  {
         height: 100vh;
+    }
+
+    .left {
         background-size: cover;
-        background-position: right;
-    }
-    .icon-form{
-        color: $lightBlue;
-        margin-right: $marginSemi;
-    }
-    .card-login{
-        width: 38%;
-        height: auto;
-        margin-left: $marginHuge;
+        background-position: top;
+        width: 50%;
 
-    }
-
-    .tittle {
-        transform: scaleX(1.12);
-    }
-    .derechos{
-        bottom: 0;
-        position: absolute;
-        p {
-        font-size: $fontMicro;
+        .logo {
+            width: 60%;
         }
     }
+    
+    .right {
+        width: 50%;
+        background-color: $white;
+
+        .btn-back {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 350ms ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+                color: $lightBlue;
+            }
+        }
+
+        .logo-mobile {
+            display: none;
+        }
+
+        .form-data {
+            width: 90%;
+            padding: 0 $paddingExtra ;
+
+            .title {
+                transform: scaleX(1.02);
+            }
+        }
+    }
+
+    
 }
 
 
@@ -42,8 +65,48 @@
 
 @media screen and (max-width: 992px) {
 
+    .login {
+        .left {
+            width: 40%
+        }
+    
+        .right {
+            width: 60%;
+    
+            .form-data {
+                width: 90%;
+                padding: 0;
+            }
+        }
+    }
+
 }
 
 @media screen and (max-width: 768px) {
-    
+
+.login {
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+        background-color: $white;
+
+        h1 {
+            font-size: $fontHuge;
+        }
+
+        .logo-mobile {
+            display: flex;
+            margin-bottom: 24px;
+            width: 65%;
+        }
+
+        .form-data {
+            width: 90%;
+            padding: 0;
+        }
+    }
+}
 }
