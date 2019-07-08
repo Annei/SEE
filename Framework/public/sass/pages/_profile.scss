@@ -5,36 +5,33 @@
 
 .profile {
     // font-family: $Heebo;
+    background-color: $white;
 
-    .container-img-profile{
-        position: relative;
-        width: 150px;
-        height: auto;
-        .img-profile{
-            position: absolute;
-            border-radius: 50%;
-            bottom: 10px;
-            left: 20px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
+    .container-gnral-info {
+        height: 100vh;
     }
+
     .container-info-student{
-        background: $formBackground;
-        width: 27%;
-        height: 84vh;
-    }
-    .content-info-gral{
-        .frm-info-gral{
-            padding-top: $paddingNormal;
-            .container-input-info-gral{
-                padding-top: $paddingMedium;
-            }
-            .btn{
-                margin-top: $marginSemi;
-            }
-        }
+        background: $lightGray;
+        width: 315px;
+        min-height: 100%;
+        padding-top: $paddingHuge;
     }
     
+    .frm-info-gral{
+        padding-top: $paddingNormal;
+        
+
+        .container-input-info-gral{
+            width: 90%;
+            padding-top: $paddingMedium;
+        }
+        .container-input-large{
+            width: 100%;
+            padding-top: $paddingMedium;
+        }
+    }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -42,9 +39,114 @@
 }
 
 @media screen and (max-width: 992px) {
-
+    .profile {
+        .frm-info-gral{
+            padding-top: $paddingNormal;
+            .container-input-info-gral{
+                width: 100%;
+            }
+        }
+        .container-info-student{
+            width: 100%;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .container-img-profile{
+        img{
+            margin-top: $paddingExtra;
+            width: 100px !important;
+            height: 100px !important;
+        }
+    }
+    .header-content{
+        h1, h2{
+            padding-left: 3rem;
+        }
+    }
+
+
+    .profile {
+        .frm-info-gral{
+            padding-top: $paddingNormal;
+            .container-input-info-gral{
+                width: 100%;
+            }
+        }
+        .container-info-student{
+            width: 100%;
+            .column{
+                padding: $paddingMedium $paddingHuge;
+            }
+        }
+    }
+    .container-info-student{
+        width: 100%;
+        .column{
+            padding: $paddingMedium $paddingNormal;
+        }
+    }
+
     
 }
+
+
+/**********************************************/
+/**********************************************/
+/**********************************************/
+/**********************************************/
+ /**
+    * profile.scss
+    * @description: Estilos de la página de perfil
+**/
+
+// .profile {
+//     // font-family: $Heebo;
+//     background-color: $white;
+
+//     .container-gnral-info {
+//         height: 100vh;
+//     }
+
+//     .container-info-student{
+//         background: $lightGray;
+//         width: 315px;
+//         min-height: 100%;
+//         padding-top: $paddingHuge;
+//     }
+    
+//     .frm-info-gral{
+//         padding-top: $paddingNormal;
+        
+
+//         .container-input-info-gral{
+//             width: 90%;
+//             padding-top: $paddingMedium;
+//         }
+//         .container-input-large{
+//             width: 100%;
+//             padding-top: $paddingMedium;
+//         }
+//     }
+
+// }
+
+// @media screen and (min-width: 1440px) {
+
+// }
+
+// @media screen and (max-width: 992px) {
+//     .profile {
+//         .frm-info-gral{
+//             padding-top: $paddingNormal;
+//             .container-input-info-gral{
+//                 width: 100%;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 768px) {
+    
+// }

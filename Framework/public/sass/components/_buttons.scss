@@ -5,7 +5,6 @@
 
 button {
     font-family: $Heebo;
-    cursor: pointer;
 }
 
 .btn {
@@ -15,4 +14,48 @@ button {
     -webkit-tap-highlight-color: transparent;
 }
 
+.btn-general-data {
+    padding: 5px $paddingLarge;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background: $darkBlue;
+    color: $white;
+    transition: background .300s ease-in-out;
 
+    .icon-btn {
+        margin-right: $marginNormal;
+    }
+
+    &:hover {
+        background: $lightBlue;
+    }
+}
+
+.btn-admin {
+    padding: 5px $paddingLarge;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background: $darkBlue;
+    color: $white;
+    transition: background .300s ease-in-out;
+
+    .icon-btn {
+        margin-right: $marginNormal;
+    }
+
+    &:hover {
+        background: $lightBlue;
+    }
+}
+
+.btn-login {
+    padding: 6px $paddingLarge;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background: $darkBlue;
+    border-radius: 4px;
+    color: $white;
+    transition: background .300s ease-in-out;
+
+    &:hover {
+        background: $lightBlue;
+        
+    }
+}

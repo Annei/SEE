@@ -36,3 +36,17 @@ $marginExtra:       64px;
 .white-space-48 { height: 48px; }
 
 .white-space-64 { height: 64px; }
+
+.padding-normal { padding: $paddingNormal; }
+.padding-medium { padding: $paddingMedium; }
+.padding-semi   { padding: $paddingSemi;   }
+.padding-large  { padding: $paddingLarge;  }
+.padding-huge   { padding: $paddingHuge;   }
+.padding-extra  { padding: $paddingExtra;  }
+
+.margin-normal { margin: $marginNormal; }
+.margin-medium { margin: $marginMedium; }
+.margin-semi   { margin: $marginSemi;   }
+.margin-large  { margin: $marginLarge;  }
+.margin-huge   { margin: $marginHuge;   }
+.margin-extra  { margin: $marginExtra;  }

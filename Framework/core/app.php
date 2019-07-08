@@ -5,15 +5,16 @@
 
 class App 
 {
-	private $homeController = "WelcomeController";
-	private $rutahome       = 'controllers/welcome/welcomeController';
-	private $rutaLogin      = 'controllers/auth/authController'.'.php';
+	private $homeController = "AuthController";
+	private $rutaLogin      = 'controllers/auth/authController';
+	private $rutahome       = '';
 	
 	private $routeRoutes    = 'routes/mapping'.'.php';
 
 	function __construct()
 	{
-		
+		$this->rutahome = $this->rutaLogin;
+
 		$url = isset($_GET['url'])? $_GET['url'] : null;
 		$url = rtrim($url,'/');
 		$url = explode('/',$url);

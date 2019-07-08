@@ -31,14 +31,25 @@ $dev: false;
 @import './components/inputs';
 @import './components/header';
 @import './components/cards';
+@import './components/tables';
+@import './components/modals';
+
+
 @import './components/left-main';
 
 /*      Páginas      */
 
+@import './pages/calificaciones';
+@import './pages/horario';
+@import './pages/kardex';
+@import './pages/login';
+
 @import './pages/example';
 @import './pages/profile';
-@import './pages/welcome';
-@import './pages/instructions';
-
+@import './pages/formatos';
+@import './pages/carga-academica';
+@import './pages/carga-academica-pdf';
+@import './pages/errors.scss';
+@import './pages/noticias';
 
 @if $dev { @include dev; }

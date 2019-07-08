@@ -35,8 +35,8 @@ class Database
         }catch(PDOException $e){
         	#poner un error mas decente
             // print_r(' <br>Error en MYSQLconnect: ' . $e->getMessage() ."<br>");
-              $error = new Errores();
-             $error->E500("conex ddbb A1");//base datos
+            $error = new Errores();
+            $error->E500("conex ddbb A1");//base datos
              exit;
         }   
     }

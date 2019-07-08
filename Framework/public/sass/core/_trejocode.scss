@@ -15,6 +15,8 @@
    - These properties able the cross compatibility for browsers and removes default properties from browsers.
 */
 
+$flex: flex;
+
 * {
     padding: 0;
     margin: 0;
@@ -22,7 +24,6 @@
 
 html {
     font-size: 100%;
-    background-color: #F7F7F7;
 }
 
 *, *:before, *:after {
@@ -31,6 +32,7 @@ html {
 
 body {    
     overflow-x: hidden;
+    background-color: #F5F4F4;
 }
 
 input, textarea, select, option, button {
@@ -54,10 +56,6 @@ input:focus, select:focus {
     transition: 400ms ease-in-out;
 }
 
-div, header, footer, section, article, aside, nav, form, table {
-    width: 100%;
-}
-
 ul, ol {
     list-style: none;
 }
@@ -73,8 +71,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-
-
 
 
 /* CLASES
@@ -96,15 +92,17 @@ img {
 */
 
 .flex {
-    display: flex;
-}
-
-.flex div, .flex img, .flex header, .flex nav, .flex form {
+    width: 100%;
     display: flex;
 }
 
 .container {
     width: 90%;
+    display: flex;
+}
+
+.container-data {
+    width: 92% !important;
 }
 
 .responsive-img {
@@ -114,60 +112,84 @@ img {
 }
 
 .row {
+    display: flex;
     flex-direction: row;
 }
 
 .row-responsive {
+    display: flex;
     flex-direction: row;
 }
 
 .column {
+    display: flex;
     flex-direction: column;
-}
-
-.auto {
-    width: auto;    
 }
 
 .wrap {
     flex-wrap: wrap;
+    display: flex;
 }
-
 
 
 /*    ALIGNMENT    */
 
 
 .justify-center {
+    width: 100%;
+    display: flex;
     justify-content: center;
 }
 
 .justify-start {
+    width: 100%;
+    display: flex;
     justify-content: flex-start;
 }
 
 .justify-end {
+    width: 100%;
+    display: flex;
     justify-content: flex-end;
 }
 
 .justify-between {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
 }
 
-.justify-arround {
+.justify-around {
+    width: 100%;
+    display: flex;
     justify-content: space-around;
 }
 
 .align-center {
+    width: 100%;
+    display: flex;
     align-items: center;
 }
 
 .align-start {
+    width: 100%;
+    display: flex;
     align-items: flex-start;
 }
 
 .align-end {
+    width: 100%;
+    display: flex;
     align-items: flex-end;
+}
+
+.auto {
+    width: auto;    
+    display: flex;
+}
+
+.full {
+    width: 100%;
 }
 
 
@@ -197,6 +219,10 @@ img {
     overflow-x: auto;
 }
 
+.table-responsive table{
+    width: 100%;
+}
+
 .table-auto {
     table-layout: auto;
 }
@@ -221,6 +247,10 @@ img {
 
 .hidden {
     display: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 
@@ -251,7 +281,7 @@ img {
 
     .white-space-64 {
         height: 32px;
-    }      
+    }
     
 }
 
