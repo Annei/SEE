@@ -653,4 +653,4 @@ public function getAcademicData($matricula)
 // FIN PARTE GLORIA Y JUANILLO
 
 }
-?>
+?> 

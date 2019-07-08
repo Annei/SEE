@@ -1,7 +1,7 @@
 <?php  
 /**
-@author: Universidad Politecnica - Gustavo
-@description: Modelo para los formatos
+ *@author: Universidad Politecnica - Gustavo
+ *@description: Modelo para los formatos
  */
 class FormatosModel extends Model
 {

@@ -10,8 +10,8 @@
 
 	$this->newRoute('alumnos/datos','alumno/alumnoController','datosGenerales');
 
-	$this->newRoute('alumnos/horario','prototipo/segundoController','buscarHorario');
-	$this->newRoute('alumnos/kardex', 'kardex/kardexController','getKardex');
+	//$this->newRoute('alumnos/horario','horario/horarioController','buscarHorario');
+	//$this->newRoute('alumnos/kardex', 'kardex/kardexController','getKardex');
 
 	$this->newRoute('alumnos/pass','alumno/alumnoController','cambiaPass');
 
