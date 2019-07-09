@@ -146,7 +146,7 @@
                                     <div class="white-space-8"></div>
                                     <h4 class="color-darkgray weight-bold font-small text-left">Plan de estudios</h4>
                                     <p class="color-darkgray weight-regular">
-                                    <?php echo $this->getAcademicPeriod['clave_carrera'] . $this->getAcademicPeriod['plan_clave'] . " ". $this->getAcademicPeriod['carrera_nombre'] . " " . $this->getAcademicPeriod['plan_inicio']; ?>
+                                    <?php echo $this->getAcademicPeriod['carrera_nombre'] . "<br>" . $this->getAcademicPeriod['plan_inicio']; ?>
                                     </p>
                                     <div class="white-space-24"></div>
                                     <h4 class="color-darkgray weight-bold font-small">Cr&eacute;ditos acumulados</h4>
