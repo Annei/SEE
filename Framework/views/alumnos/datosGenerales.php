@@ -11,12 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/pages/loaderStyle.css"></link>
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/fontawesome/css/all.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <title>SEE - Perfil</title>
     <link rel="shortcut icon" href="">
 </head>
 <body>
+<div id="contenedor_carga"><div id="carga"></div></div>
     <div class="main flex ">
         <div class="column profile full">
             <div class="row-responsive">
@@ -128,7 +130,9 @@
                                     <div class="row auto">
                                         <div class="column auto">
                                             <h1 class="color-white font-large"><?php echo $this->datos['nombre']; ?></h1>
-                                            <h3 class="color-white font-medium weight-regular">Ing. Software</h3>
+                                            <h3 class="color-white font-medium weight-regular">
+                                            <?php echo  $this->getAcademicPeriod['carrera_nombre'] ?>                                            
+                                            </h3>
                                         </div>  
                                     </div>
                                 </div>
@@ -142,12 +146,12 @@
                                     <div class="white-space-8"></div>
                                     <h4 class="color-darkgray weight-bold font-small text-left">Plan de estudios</h4>
                                     <p class="color-darkgray weight-regular">
-                                        ISOF-2013 de 375 Créditos
+                                    <?php echo $this->getAcademicPeriod['clave_carrera'] . $this->getAcademicPeriod['plan_clave'] . " ". $this->getAcademicPeriod['carrera_nombre'] . " " . $this->getAcademicPeriod['plan_inicio']; ?>
                                     </p>
                                     <div class="white-space-24"></div>
                                     <h4 class="color-darkgray weight-bold font-small">Cr&eacute;ditos acumulados</h4>
                                     <p class="color-darkgray weight-regular">
-                                        297.0
+                                        <?php echo $this->creditos;?>
                                     </p>
                                     <div class="white-space-24"></div>
                                     <h4 class="color-darkgray weight-bold font-small text-left">Matricula</h4>
@@ -167,7 +171,7 @@
                                     <div class="white-space-24"></div>
                                     <h4 class="color-darkgray weight-bold font-small">Periodo actual o &uacute;ltimo</h4>
                                     <p class="color-darkgray weight-regular">
-                                        MAY-AGO2019
+                                    <?php echo $this->periodo; ?>                                        
                                     </p>
                                 </div>
                             </div>
@@ -238,6 +242,13 @@
         </div>
 
     </div>
-    
+    <script>
+    window.onload = function()
+       {
+        var contenedor = document.getElementById('contenedor_carga');
+        contenedor.style.visibility = 'hidden';
+        contenedor.style.opacity = '0';
+        }
+    </script>
 </body>
 </html>
