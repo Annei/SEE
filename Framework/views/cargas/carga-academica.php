@@ -140,15 +140,15 @@
                                     </tr>
                                     <tr>
                                         <th class="bg-lightBlue color-white weight-bold">Alumno</th>
-                                        <td class="weight-bold"><?php echo $this->getAcademicPeriod['nombre']; ?></td>
+                                        <td class="weight-bold"><?php echo utf8_encode($this->getAcademicPeriod['nombre']); ?></td>
                                     </tr>
                                     <tr>
                                         <th class="bg-lightBlue color-white weight-bold">Plan de estudios</th>
-                                        <td class="weight-bold"><?php echo $this->getAcademicPeriod['clave_carrera'] . $this->getAcademicPeriod['plan_clave'] . " ". $this->getAcademicPeriod['carrera_nombre'] . " " . $this->getAcademicPeriod['plan_inicio']; ?></td>
+                                        <td class="weight-bold"><?php echo utf8_encode($this->getAcademicPeriod['clave_carrera']) . utf8_encode($this->getAcademicPeriod['plan_clave']) . " ". utf8_encode($this->getAcademicPeriod['carrera_nombre']) . " " . utf8_encode($this->getAcademicPeriod['plan_inicio']); ?></td>
                                     </tr>
                                     <tr>
                                         <th class="bg-lightBlue color-white weight-bold">Periodo</th>
-                                        <td class="weight-bold"><?php echo $this->data['info'];?></td>
+                                        <td class="weight-bold"><?php echo utf8_encode($this->data['info']);?></td>
                                     </tr>
                                 </table>
                                 <div class="white-space-24"></div>
@@ -170,10 +170,10 @@
                                     <tbody class="capitalize">
                                         <tr>
                                             <?php $vector = $this->getAcademicMat; foreach ($vector as $key) { ?>
-                                            <td><?php echo ($key['clave_materia']); ?></td>
-                                            <td><?php echo ($key['nombre_mater']); ?></td>
-                                            <td><?php echo ($key['cr']); ?></td>
-                                            <td><?php echo ($key['nombre_profesor']) . " " . ($key['apellido_profesor']); ?></td>
+                                            <td><?php echo utf8_encode(($key['clave_materia'])); ?></td>
+                                            <td><?php echo utf8_encode(($key['nombre_mater'])); ?></td>
+                                            <td><?php echo utf8_encode(($key['cr'])); ?></td>
+                                            <td><?php echo utf8_encode(($key['nombre_profesor'])) . " " . utf8_encode(($key['apellido_profesor'])); ?></td>
                                             <td><?php echo ($key['lunes']) . " " . ($key['lunes_aula']); ?></td>
                                             <td><?php echo ($key['martes']) . " " . ($key['martes_aula']); ?></td>
                                             <td><?php echo ($key['miercoles']) . " " . ($key['miercoles_aula']); ?></td>
