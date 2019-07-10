@@ -1,4 +1,3 @@
- Back_End
 <?php  
 /**
  * 	Controlador que gestiona el kardex
@@ -48,13 +47,10 @@ class KardexController extends Controller
 	}
 }
 
-<?php  
 /**
  * 	Controlador que gestiona el kardex
  */
-
-
-#
+/*
 class KardexController extends Controller
 {
 	function __construct()
@@ -85,5 +81,5 @@ class KardexController extends Controller
 		}
 	}
 }
-
+*/
 ?>

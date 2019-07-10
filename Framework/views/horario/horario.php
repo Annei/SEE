@@ -33,7 +33,7 @@
                         <!-- <div class="white-space-16"></div> -->
                         
                         <div class="column main align-center auto">
-                            <div class="menu-options">
+                        <div class="menu-options">
                                 <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
                                     <div class="row justify-center align-start">
                                         <div class="column icon align-center"><i class="fa fa-user"></i></div>
@@ -79,7 +79,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>noticias" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
                                         <div class = "column full">
@@ -88,20 +88,11 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>alumnos/formato" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
                                         <div class = "column full">
                                             <h4 class="color-white weight-regular font-small">Formatos</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
                                         </div>
                                     </div>
                                 </a>

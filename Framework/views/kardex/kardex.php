@@ -34,8 +34,8 @@
                         <!-- <div class="white-space-16"></div> -->
                         
                         <div class="column main align-center auto">
-                            <div class="menu-options">
-                                <a href="profile.html" class="item-left">
+                        <div class="menu-options">
+                                <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
                                     <div class="row justify-center align-start">
                                         <div class="column icon align-center"><i class="fa fa-user"></i></div>
                                         <div class = "column full">
@@ -44,7 +44,7 @@
                                     </div>
                                 </a>
                                 
-                                <a href="carga-academica.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left">
                                     <div class="row justify-center">
                                             <div class="column icon align-center"><i class="fa fa-university"></i></div>
                                         <div class = "column full">
@@ -53,7 +53,7 @@
                                     </div>
                                 </a>
     
-                                <a href="calificaciones.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left">
                                     <div class="row justify-center">
                                             <div class="column icon align-center"><i class="fa fa-star"></i></div> 
                                         <div class = "column full">
@@ -62,7 +62,7 @@
                                     </div>
                                 </a>
     
-                                <a href="kardex.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
                                         <div class="column full">
@@ -71,7 +71,7 @@
                                     </div>
                                 </a>
     
-                                <a href="horario.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
                                         <div class = "column full">
@@ -80,7 +80,7 @@
                                     </div>
                                 </a>
     
-                                <a href="noticias.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
                                         <div class = "column full">
@@ -89,7 +89,7 @@
                                     </div>
                                 </a>
     
-                                <a href="formatos.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
                                         <div class = "column full">
@@ -98,16 +98,7 @@
                                     </div>
                                 </a>
     
-                                <a href="" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="login.html" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>logout" class="item-left">
                                     <div class="row item-left justify-center">
                                         <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
                                         <div class = "column full">
