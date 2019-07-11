@@ -99,7 +99,7 @@ class AuthController extends Controller
 						}
 
 					}else{
-						echo "credenciales invalidas";
+					//	echo "credenciales invalidas";
 						$this->view->error = "Credenciales invalidas :c 1";
 						$this->render();
 					}
