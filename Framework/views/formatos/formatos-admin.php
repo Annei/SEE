@@ -37,8 +37,6 @@
                         
 <div class="column main align-center auto">
                             <div class="menu-options">
-                              
-    
                                 <a href="<?php echo constant('URL'); ?>xd" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>

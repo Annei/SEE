@@ -99,8 +99,8 @@ class AuthController extends Controller
 						}
 
 					}else{
-						echo "credenciales invalidas";
-						$this->view->error = "Credenciales invalidas :c";
+					//	echo "credenciales invalidas";
+						$this->view->error = "Credenciales invalidas :c 1";
 						$this->render();
 					}
 				}else {
@@ -147,9 +147,9 @@ class AuthController extends Controller
 
 					}else{
 						// echo "credenciales invalidas usuario no existe";
-						include './views/alerts/Headers.php';
-						echo '<script language="javascript" src="/SEE/framework/public/jquery/Warning.js"></script>';
-						$this->view->error = "Credenciales invalidas :c";
+						//include './views/alerts/Headers.php';
+						//echo '<script language="javascript" src="/SEE/framework/public/jquery/Warning.js"></script>';
+						$this->view->error = "Credenciales invalidas :c 2";
 						$this->render();
 					}
 				}

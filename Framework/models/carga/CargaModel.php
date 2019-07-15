@@ -495,7 +495,7 @@ public function getAcademicData($matricula)
 		$allSbujects=$this->getClaveMateria($matricula);
 		$allTurns=$this->getTurnosAlumno($matricula);
 		$allPeriods=$this->getPeriodosAlumno($matricula);
-		
+		ini_set('max_execution_time', 300);
 		if ($con) {
 			$numero_registros = dbase_numrecords($con);
 			for	 ($j = 0; $j <= (count($allSbujects) - 1); $j++)
@@ -653,4 +653,4 @@ public function getAcademicData($matricula)
 // FIN PARTE GLORIA Y JUANILLO
 
 }
-?>
+?> 

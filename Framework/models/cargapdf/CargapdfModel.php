@@ -42,7 +42,7 @@ class CargapdfModel extends Model
   	//Nombre del periodo
 	public function getnClave($matricula){
         $datos = $this->DB->DBFconnect('DLISTA');
-     	
+		ini_set('max_execution_time', 300);
      	$info = array();
         $aux = 0;
 
