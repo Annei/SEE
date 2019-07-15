@@ -1,8 +1,13 @@
+
+
 <?php 
 
-/**
- * 
+/*
+Modulo de Noticias - Controlador para el Admin
+Raul Navarrete Novelo
  */
+
+
 class NotificacionController extends Controller
 {
 	
@@ -16,7 +21,7 @@ class NotificacionController extends Controller
 		parent::__construct();
 		$this->modeln    = "Notificacion"; 
 		$this->path      = "notificacion";
-		$this->routeView = "";
+		$this->routeView = "notificaciones/crearNotificacionesAdmin";
 	}
 
 	public function render(){
@@ -32,18 +37,49 @@ class NotificacionController extends Controller
 		// $texto, $imagen, $carrera, $matricula
 		// La imagen va serializada
 		//NOTICIA - IMAGEN - CARRERA - MATRICULA
-		$this->model->crearNotificacion('Junta de jefes de grupo el 25 / 03 / 2020', '',1,201600321);
+		$this->view->data = $this->model->getNoticia();
+
+		if (isset($_POST['titulo'])) {
+
+			$this->model->crearNotificacion($_POST['titulo'],$_POST['cuerpo'],$_POST["imagen"],$_POST["carreras"],201600321);
+			$this->model->SubirArchivo('C:/Users/raul4/Pictures/'.$_POST["imagen"],$_POST["imagen"]); 
+			
+			unset($_POST["titulo"]);
+			unset($_POST["cuerpo"]);
+			unset($_POST["imagen"]);
+			unset($_POST["carreras"]);
+			header("Refresh:0");
+		}
+		
+
+
+		if($_SESSION['usuario']['type'] == 'admin') {
+		$this->render();
+
+		} else {
+			$this->localRedirect('noticias');
+		}
+		
+		
 	}
 
 
 	public function traerNoticia(){
-		echo "<pre>";
-		print_r($this->model->getNoticia());
-		echo "</pre>";
+		
+		$lastNoticia = $this->model->getNoticia();
+		$this->render();
+		
+		
+
 	}
 
 	public function editarNotificacion(){
-		$this->model->editNoticia('Cambios realizados n','noticia.png',1,2);
+
+		$lastNoticia = $this->model->getNoticia();
+		$this->view->data = $this->model->getNoticia();
+		$this->model->editNoticia($_POST['tituloEdit'],$_POST['cuerpoEdit'],$_POST["imagenEdit"],NULL,$_GET["id"]);
+		echo $this->model->getNoticia()[4];
+		$this->localRedirect('administrador/cargarNoticia');
 	}
 
 	public function carreras(){

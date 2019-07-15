@@ -24,6 +24,7 @@
     <div class="main flex">
         <div class="column kardex full">
             <div class="row-responsive">
+
                 <div class="column align-center justify-center menu" tabindex="0"><!--menu-->
                 <?php include './views/menu/menu.php';?>
                 </div><!--menu-->
