@@ -1,6 +1,6 @@
 <?php  
 // PROJECT PATH
-	define('URL', 'http://localhost:8080/PROYECTOUNI/SEE/Framework/');
+	define('URL', 'http://localhost/backend/see/framework/');
 	
 // DATABASE MYSQL
 	define('HOST', 'localhost');
