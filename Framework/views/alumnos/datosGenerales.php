@@ -96,15 +96,6 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
                                 <a href="<?php echo constant('URL'); ?>logout" class="item-left">
                                     <div class="row item-left justify-center">
                                         <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>

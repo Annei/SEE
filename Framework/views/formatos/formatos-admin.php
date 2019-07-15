@@ -37,50 +37,7 @@
                         
 <div class="column main align-center auto">
                             <div class="menu-options">
-                                <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
-                                    <div class="row justify-center align-start">
-                                        <div class="column icon align-center"><i class="fa fa-user"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Datos generales</h4>
-                                        </div>
-                                    </div>
-                                </a>
-                                
-                                <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left">
-                                    <div class="row justify-center">
-                                            <div class="column icon align-center"><i class="fa fa-university"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Carga académica</h4>
-                                        </div>                        
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left">
-                                    <div class="row justify-center">
-                                            <div class="column icon align-center"><i class="fa fa-star"></i></div> 
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Calificaciones</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
-                                        <div class="column full">
-                                            <h4 class="color-white weight-regular font-small">Kardex</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Horario</h4>
-                                        </div>
-                                    </div>
-                                </a>
+                              
     
                                 <a href="<?php echo constant('URL'); ?>xd" class="item-left">
                                     <div class="row justify-center">
@@ -91,20 +48,11 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>administrador/formatos" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
                                         <div class = "column full">
                                             <h4 class="color-white weight-regular font-small">Formatos</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
                                         </div>
                                     </div>
                                 </a>

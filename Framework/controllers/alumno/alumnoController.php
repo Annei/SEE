@@ -32,7 +32,7 @@ class AlumnoController extends Controller
 		if ($this->validatorAuth($this->auth)) {
 			
 		$datos = $this->model->getDbfUser($_SESSION['usuario']['matricula']);
-			var_dump($datos);
+			//var_dump($datos);
 			$this->view->datos = $datos;
 			$this->render();
 		}else{

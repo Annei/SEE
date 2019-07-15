@@ -32,89 +32,79 @@
                     <!-- <div class="white-space-16"></div> -->
                     
                     <div class="column main align-center auto">
-                            <div class="menu-options">
-                                <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
-                                    <div class="row justify-center align-start">
-                                        <div class="column icon align-center"><i class="fa fa-user"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Datos generales</h4>
+                        <div class="menu-options">
+                                    <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
+                                        <div class="row justify-center align-start">
+                                            <div class="column icon align-center"><i class="fa fa-user"></i></div>
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Datos generales</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-
-                                <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-university"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Carga académica</h4>
-                                        </div>                        
-                                    </div>
-                                </a>
-
-
-                                <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left">
-                                    <div class="row justify-center">
-                                            <div class="column icon align-center"><i class="fa fa-star"></i></div> 
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Calificaciones</h4>
+                                    </a>
+                                    
+                                    <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left">
+                                        <div class="row justify-center">
+                                                <div class="column icon align-center"><i class="fa fa-university"></i></div>
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Carga académica</h4>
+                                            </div>                        
                                         </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
-                                        <div class="column full">
-                                            <h4 class="color-white weight-regular font-small">Kardex</h4>
+                                    </a>
+        
+                                    <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left">
+                                        <div class="row justify-center">
+                                                <div class="column icon align-center"><i class="fa fa-star"></i></div> 
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Calificaciones</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Horario</h4>
+                                    </a>
+        
+                                    <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left">
+                                        <div class="row justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
+                                            <div class="column full">
+                                                <h4 class="color-white weight-regular font-small">Kardex</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>noticias" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Noticias</h4>
+                                    </a>
+        
+                                    <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
+                                        <div class="row justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Horario</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Formatos</h4>
+                                    </a>
+        
+                                    <a href="<?php echo constant('URL'); ?>xd" class="item-left">
+                                        <div class="row justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Noticias</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-    
-                                <a href="" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
+                                    </a>
+        
+                                    <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
+                                        <div class="row justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Formatos</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-    
-                                <a href="<?php echo constant('URL'); ?>logout" class="item-left">
-                                    <div class="row item-left justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Cerrar Sesión</h4>
+                                    </a>
+        
+                                    <a href="<?php echo constant('URL'); ?>logout" class="item-left">
+                                        <div class="row item-left justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
+                                            <div class = "column full">
+                                                <h4 class="color-white weight-regular font-small">Cerrar Sesión</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
                         </div>
                 </div>    
                 <div class="column full body">
@@ -140,15 +130,15 @@
                                     </tr>
                                     <tr>
                                         <th class="bg-lightBlue color-white weight-bold">Alumno</th>
-                                        <td class="weight-bold"><?php echo $this->getAcademicPeriod['nombre']; ?></td>
+                                        <td class="weight-bold"><?php echo utf8_encode($this->getAcademicPeriod['nombre']); ?></td>
                                     </tr>
                                     <tr>
                                         <th class="bg-lightBlue color-white weight-bold">Plan de estudios</th>
-                                        <td class="weight-bold"><?php echo $this->getAcademicPeriod['clave_carrera'] . $this->getAcademicPeriod['plan_clave'] . " ". $this->getAcademicPeriod['carrera_nombre'] . " " . $this->getAcademicPeriod['plan_inicio']; ?></td>
+                                        <td class="weight-bold"><?php echo utf8_encode($this->getAcademicPeriod['clave_carrera']) . utf8_encode($this->getAcademicPeriod['plan_clave']) . " ". utf8_encode($this->getAcademicPeriod['carrera_nombre']) . " " . utf8_encode($this->getAcademicPeriod['plan_inicio']); ?></td>
                                     </tr>
                                     <tr>
                                         <th class="bg-lightBlue color-white weight-bold">Periodo</th>
-                                        <td class="weight-bold"><?php echo $this->data['info'];?></td>
+                                        <td class="weight-bold"><?php echo utf8_encode($this->data['info']);?></td>
                                     </tr>
                                 </table>
                                 <div class="white-space-24"></div>
@@ -170,10 +160,10 @@
                                     <tbody class="capitalize">
                                         <tr>
                                             <?php $vector = $this->getAcademicMat; foreach ($vector as $key) { ?>
-                                            <td><?php echo ($key['clave_materia']); ?></td>
-                                            <td><?php echo ($key['nombre_mater']); ?></td>
-                                            <td><?php echo ($key['cr']); ?></td>
-                                            <td><?php echo ($key['nombre_profesor']) . " " . ($key['apellido_profesor']); ?></td>
+                                            <td><?php echo utf8_encode(($key['clave_materia'])); ?></td>
+                                            <td><?php echo utf8_encode(($key['nombre_mater'])); ?></td>
+                                            <td><?php echo utf8_encode(($key['cr'])); ?></td>
+                                            <td><?php echo utf8_encode(($key['nombre_profesor'])) . " " . utf8_encode(($key['apellido_profesor'])); ?></td>
                                             <td><?php echo ($key['lunes']) . " " . ($key['lunes_aula']); ?></td>
                                             <td><?php echo ($key['martes']) . " " . ($key['martes_aula']); ?></td>
                                             <td><?php echo ($key['miercoles']) . " " . ($key['miercoles_aula']); ?></td>
