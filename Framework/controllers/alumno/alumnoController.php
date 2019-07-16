@@ -47,7 +47,11 @@ class AlumnoController extends Controller
 			//$this->view->creditos_total = $creditos_total;
 			$periodo = $this->model->getPeriodo($clave);
 			$this->view->periodo = $periodo;
+
+			$ingreso = $this->model->getPeriodoAlumnoIngreso($getAcademicPeriod['plan_clave'],$getAcademicPeriod['clave_carrera']);
+			$this->view->ingreso = $ingreso;
 			$this->render();
+			//$this->getAcademicPeriod['clave_carrera'] . $this->getAcademicPeriod['plan_clave'] . " ". $this->getAcademicPeriod['carrera_nombre'] . " " . $this->getAcademicPeriod['plan_inicio'];
 		}else{
 			$this->localRedirect('login');
 		}
