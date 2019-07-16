@@ -67,3 +67,18 @@ input, textarea, select, option, label {
     border-bottom: 2px solid $darkGray;
 }
 
+.input-news {
+    width: 100%;
+    background: white;
+    border: 1px solid black;
+    padding: 3px 8px;
+    font-size: $fontTiny;
+}
+
+.text-admin {
+    border: 1px solid;
+    padding: 4px;
+    font-size: $fontTiny;
+    width: 100%;
+}
+

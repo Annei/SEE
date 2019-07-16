@@ -20,9 +20,11 @@
     <div class="main flex">
         <div class="column formatos full">
             <div class="row-responsive full">
+
                 <div class="column align-center justify-center menu" tabindex="0"><!--menu-->
                 <?php include './views/menu/menu.php';?>                        
                 </div>  <!--menu-->
+
                 <div class="column align-center body">
                     <div class="row-responsive full">
                         <div class="row-responsive justify-center header-tittle align-center" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
