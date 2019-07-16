@@ -23,9 +23,93 @@
     <div class="main flex">
         <div class="column horario full">
             <div class="row-responsive">                
-                <div class="column align-center justify-center menu" tabindex="0"><!--menu-->
-                <?php include './views/menu/menu.php';?>
-                </div><!--menu-->
+                <div class="column align-center justify-center menu" tabindex="0">
+                        <div class="smartphone-menu-trigger"></div>
+                        <div class="white-space-24"></div>
+    
+                        <div class="responsive-img item-left justify-center align-center logo">
+                            <img src="<?php echo constant('URL'); ?>/public/img/upqroo-newlogo@2x.png" alt="responsive img" title="responsive img" class="cover-img "/>
+                        </div>
+    
+                        <div class="white-space-32"></div>
+                        <!-- <div class="white-space-16"></div> -->
+                        
+                        <div class="column main align-center auto">
+                        <div class="menu-options">
+                                <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
+                                    <div class="row justify-center align-start">
+                                        <div class="column icon align-center"><i class="fa fa-user"></i></div>
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Datos generales</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left">
+                                    <div class="row justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-university"></i></div>
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Carga académica</h4>
+                                        </div>                        
+                                    </div>
+                                </a>
+    
+                                <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left">
+                                    <div class="row justify-center">
+                                            <div class="column icon align-center"><i class="fa fa-star"></i></div> 
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Calificaciones</h4>
+                                        </div>
+                                    </div>
+                                </a>
+    
+                                <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left">
+                                    <div class="row justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
+                                        <div class="column full">
+                                            <h4 class="color-white weight-regular font-small">Kardex</h4>
+                                        </div>
+                                    </div>
+                                </a>
+    
+                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
+                                    <div class="row justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Horario</h4>
+                                        </div>
+                                    </div>
+                                </a>
+    
+                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
+                                    <div class="row justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Noticias</h4>
+                                        </div>
+                                    </div>
+                                </a>
+    
+                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
+                                    <div class="row justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Formatos</h4>
+                                        </div>
+                                    </div>
+                                </a>
+    
+                                <a href="<?php echo constant('URL'); ?>logout" class="item-left">
+                                    <div class="row item-left justify-center">
+                                        <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
+                                        <div class = "column full">
+                                            <h4 class="color-white weight-regular font-small">Cerrar Sesión</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                </div>   
                 <div class="column align-center body">
                 <div class="row-responsive full">
                         <div class="row-responsive justify-center header-tittle align-center full" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
@@ -115,132 +199,132 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="uppercase">
-                                                <?php if (($this->turno) == 0){ ?>
+                                            <?php if (($this->turno) == 0){ ?>
                                             <tr>
                                                 <td>07:00 - 07:50</td>
                                                 <td><?php if (isset($this->horario['lunes']['07:50'])){
-                                                    echo $this->horario['lunes']['07:50']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['07:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['07:50'])){
-                                                    echo $this->horario['martes']['07:50']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['07:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['07:50'])){
-                                                    echo $this->horario['miercoles']['07:50']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['07:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['07:50'])){
-                                                    echo $this->horario['jueves']['07:50']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['07:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['07:50'])){
-                                                    echo $this->horario['viernes']['07:50']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['07:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 
                                             </tr>
                                             <tr>
                                                 <td>07:50 - 08:40</td>
                                                 <td><?php if (isset($this->horario['lunes']['08:40'])){
-                                                    echo $this->horario['lunes']['08:40']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['08:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['08:40'])){
-                                                    echo $this->horario['martes']['08:40']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['08:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['08:40'])){
-                                                    echo $this->horario['miercoles']['08:40']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['08:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['08:40'])){
-                                                    echo $this->horario['jueves']['08:40']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['08:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['08:40'])){
-                                                    echo $this->horario['viernes']['08:40']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['08:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>08:40 - 09:30</td>
-                                                <td><?php if (isset($this->horario['lunes']['09:40'])){echo $this->horario['lunes']['09:40']['nombre'];
+                                                <td><?php if (isset($this->horario['lunes']['09:40'])){echo utf8_encode($this->horario['lunes']['09:40']['nombre']);
                                                 }elseif (isset($this->horario['lunes']['09:30'])){
-                                                   echo $this->horario['lunes']['09:30']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['martes']['09:40'])){echo $this->horario['martes']['09:40']['nombre'];
+                                                   echo utf8_encode($this->horario['lunes']['09:30']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['martes']['09:40'])){echo utf8_encode($this->horario['martes']['09:40']['nombre']);
                                                 }elseif (isset($this->horario['martes']['09:30'])){
-                                                   echo $this->horario['martes']['09:30']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['miercoles']['09:40'])){echo $this->horario['miercoles']['09:40']['nombre'];
+                                                   echo utf8_encode($this->horario['martes']['09:30']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['miercoles']['09:40'])){echo utf8_encode($this->horario['miercoles']['09:40']['nombre']);
                                                 }elseif (isset($this->horario['miercoles']['09:30'])){
-                                                   echo $this->horario['miercoles']['09:30']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['jueves']['09:40'])){echo $this->horario['jueves']['09:40']['nombre'];
+                                                   echo utf8_encode($this->horario['miercoles']['09:30']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['jueves']['09:40'])){echo utf8_encode($this->horario['jueves']['09:40']['nombre']);
                                                 }elseif (isset($this->horario['jueves']['09:30'])){
-                                                   echo $this->horario['jueves']['09:30']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['viernes']['09:40'])){echo $this->horario['viernes']['09:40']['nombre'];
+                                                   echo utf8_encode($this->horario['jueves']['09:30']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['viernes']['09:40'])){echo utf8_encode($this->horario['viernes']['09:40']['nombre']);
                                                 }elseif (isset($this->horario['viernes']['09:30'])){
-                                                   echo $this->horario['viernes']['09:30']['nombre'];}else{echo " - ";}?></td>
+                                                   echo utf8_encode($this->horario['viernes']['09:30']['nombre']);}else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>09:40 - 10:30</td>
                                                 <td><?php if (isset($this->horario['lunes']['10:30'])){
-                                                    echo $this->horario['lunes']['10:30']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['10:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['10:30'])){
-                                                    echo $this->horario['martes']['10:30']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['10:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['10:30'])){
-                                                    echo $this->horario['miercoles']['10:30']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['10:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['10:30'])){
-                                                    echo $this->horario['jueves']['10:30']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['10:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['10:30'])){
-                                                    echo $this->horario['viernes']['10:30']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['10:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>10:30 - 11:20</td>
                                                 <td><?php if (isset($this->horario['lunes']['11:20'])){
-                                                    echo $this->horario['lunes']['11:20']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['11:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['11:20'])){
-                                                    echo $this->horario['martes']['11:20']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['11:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['11:20'])){
-                                                    echo $this->horario['miercoles']['11:20']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['11:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['11:20'])){
-                                                    echo $this->horario['jueves']['11:20']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['11:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['11:20'])){
-                                                    echo $this->horario['viernes']['11:20']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['11:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>11:20 - 12:10</td>
                                                 <td><?php if (isset($this->horario['lunes']['12:10'])){
-                                                    echo $this->horario['lunes']['12:10']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['12:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['12:10'])){
-                                                    echo $this->horario['martes']['12:10']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['12:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['12:10'])){
-                                                    echo $this->horario['miercoles']['12:10']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['12:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['12:10'])){
-                                                    echo $this->horario['jueves']['12:10']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['12:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['12:10'])){
-                                                    echo $this->horario['viernes']['12:10']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['12:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>12:10 - 13:00</td>
                                                 <td><?php if (isset($this->horario['lunes']['13:00'])){
-                                                    echo $this->horario['lunes']['13:00']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['13:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['13:00'])){
-                                                    echo $this->horario['martes']['13:00']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['13:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['13:00'])){
-                                                    echo $this->horario['miercoles']['13:00']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['13:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['13:00'])){
-                                                    echo $this->horario['jueves']['13:00']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['13:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['13:00'])){
-                                                    echo $this->horario['viernes']['13:00']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['13:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <?php } else{?>
@@ -248,127 +332,163 @@
                                                 <tr>
                                                 <td>14:00 - 14:50</td>
                                                 <td><?php if (isset($this->horario['lunes']['14:50'])){
-                                                    echo $this->horario['lunes']['14:50']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['14:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['14:50'])){
-                                                    echo $this->horario['martes']['14:50']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['14:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['14:50'])){
-                                                    echo $this->horario['miercoles']['14:50']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['14:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['14:50'])){
-                                                    echo $this->horario['jueves']['14:50']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['14:50']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['14:50'])){
-                                                    echo $this->horario['viernes']['14:50']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['14:50']['nombre']);
                                                 }else{echo " - ";}?></td>   
                                             </tr>
                                             <tr>
                                                 <td>14:50 - 15:40</td>
                                                 <td><?php if (isset($this->horario['lunes']['15:40'])){
-                                                    echo $this->horario['lunes']['15:40']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['15:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['15:40'])){
-                                                    echo $this->horario['martes']['15:40']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['15:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['15:40'])){
-                                                    echo $this->horario['miercoles']['15:40']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['15:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['15:40'])){
-                                                    echo $this->horario['jueves']['15:40']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['15:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['15:40'])){
-                                                    echo $this->horario['viernes']['15:40']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['15:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>15:40 - 16:30</td>
                                                 <td><?php if (isset($this->horario['lunes']['16:30'])){
-                                                    echo $this->horario['lunes']['16:30']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['16:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['15:40'])){
-                                                    echo $this->horario['martes']['16:30']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['16:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['16:30'])){
-                                                    echo $this->horario['miercoles']['16:30']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['16:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['16:30'])){
-                                                    echo $this->horario['jueves']['16:30']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['16:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['16:30'])){
-                                                    echo $this->horario['viernes']['16:30']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['16:30']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>16:40 - 17:30</td>
-                                                <td><?php if (isset($this->horario['lunes']['17:30'])){echo $this->horario['lunes']['17:30']['nombre'];
+                                                <td><?php if (isset($this->horario['lunes']['17:30'])){echo utf8_encode($this->horario['lunes']['17:30']['nombre']);
                                                 }elseif (isset($this->horario['lunes']['17:20'])){
-                                                   echo $this->horario['lunes']['17:20']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['martes']['17:30'])){echo $this->horario['martes']['17:30']['nombre'];
+                                                   echo utf8_encode($this->horario['lunes']['17:20']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['martes']['17:30'])){echo utf8_encode($this->horario['martes']['17:30']['nombre']);
                                                 }elseif (isset($this->horario['martes']['17:20'])){
-                                                   echo $this->horario['martes']['09:20']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['miercoles']['17:30'])){echo $this->horario['miercoles']['17:30']['nombre'];
+                                                   echo utf8_encode($this->horario['martes']['09:20']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['miercoles']['17:30'])){echo utf8_encode($this->horario['miercoles']['17:30']['nombre']);
                                                 }elseif (isset($this->horario['miercoles']['17:20'])){
-                                                   echo $this->horario['miercoles']['17:20']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['jueves']['17:30'])){echo $this->horario['jueves']['17:30']['nombre'];
+                                                   echo utf8_encode($this->horario['miercoles']['17:20']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['jueves']['17:30'])){echo utf8_encode($this->horario['jueves']['17:30']['nombre']);
                                                 }elseif (isset($this->horario['jueves']['17:20'])){
-                                                   echo $this->horario['jueves']['17:20']['nombre'];}else{echo " - ";}?></td>
-                                                <td><?php if (isset($this->horario['viernes']['17:30'])){echo $this->horario['viernes']['17:30']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['17:20']['nombre']);}else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['viernes']['17:30'])){echo utf8_encode($this->horario['viernes']['17:30']['nombre']);
                                                 }elseif (isset($this->horario['viernes']['17:20'])){
-                                                   echo $this->horario['viernes']['17:20']['nombre'];}else{echo " - ";}?></td>
+                                                   echo utf8_encode($this->horario['viernes']['17:20']['nombre']);}else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>17:30 - 18:20</td>
                                                 <td><?php if (isset($this->horario['lunes']['18:20'])){
-                                                    echo $this->horario['lunes']['18:20']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['18:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['18:20'])){
-                                                    echo $this->horario['martes']['18:20']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['18:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['18:20'])){
-                                                    echo $this->horario['miercoles']['18:20']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['18:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['18:20'])){
-                                                    echo $this->horario['jueves']['18:20']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['18:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['18:20'])){
-                                                    echo $this->horario['viernes']['18:20']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['18:20']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>18:20 - 19:10</td>
                                                 <td><?php if (isset($this->horario['lunes']['19:10'])){
-                                                    echo $this->horario['lunes']['19:10']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['19:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['19:10'])){
-                                                    echo $this->horario['martes']['19:10']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['19:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['19:10'])){
-                                                    echo $this->horario['miercoles']['19:10']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['19:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['19:10'])){
-                                                    echo $this->horario['jueves']['19:10']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['19:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['19:10'])){
-                                                    echo $this->horario['viernes']['19:10']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['19:10']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>
                                             <tr>
                                                 <td>19:10 - 20:00</td>
                                                 <td><?php if (isset($this->horario['lunes']['20:00'])){
-                                                    echo $this->horario['lunes']['20:00']['nombre'];
+                                                    echo utf8_encode($this->horario['lunes']['20:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['martes']['20:00'])){
-                                                    echo $this->horario['martes']['20:00']['nombre'];
+                                                    echo utf8_encode($this->horario['martes']['20:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['miercoles']['20:00'])){
-                                                    echo $this->horario['miercoles']['20:00']['nombre'];
+                                                    echo utf8_encode($this->horario['miercoles']['20:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['jueves']['20:00'])){
-                                                    echo $this->horario['jueves']['20:00']['nombre'];
+                                                    echo utf8_encode($this->horario['jueves']['20:00']['nombre']);
                                                 }else{echo " - ";}?></td>
                                                 <td><?php if (isset($this->horario['viernes']['20:00'])){
-                                                    echo $this->horario['viernes']['20:00']['nombre'];
+                                                    echo utf8_encode($this->horario['viernes']['20:00']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                            </tr>  
+											                                            <tr>
+                                                <td>20:00 - 20:50</td>
+                                                <td><?php if (isset($this->horario['lunes']['20:50'])){
+                                                    echo utf8_encode($this->horario['lunes']['20:50']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['martes']['20:50'])){
+                                                    echo utf8_encode($this->horario['martes']['20:50']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['miercoles']['20:50'])){
+                                                    echo utf8_encode($this->horario['miercoles']['20:50']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['jueves']['20:50'])){
+                                                    echo utf8_encode($this->horario['jueves']['20:50']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['viernes']['20:50'])){
+                                                    echo utf8_encode($this->horario['viernes']['20:50']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                            </tr>  
+											                                            <tr>
+                                                <td>20:50 - 21:40</td>
+                                                <td><?php if (isset($this->horario['lunes']['21:40'])){
+                                                    echo utf8_encode($this->horario['lunes']['21:40']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['martes']['21:40'])){
+                                                    echo utf8_encode($this->horario['martes']['21:40']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['miercoles']['21:40'])){
+                                                    echo utf8_encode($this->horario['miercoles']['21:40']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['jueves']['21:40'])){
+                                                    echo utf8_encode($this->horario['jueves']['21:40']['nombre']);
+                                                }else{echo " - ";}?></td>
+                                                <td><?php if (isset($this->horario['viernes']['21:40'])){
+                                                    echo utf8_encode($this->horario['viernes']['21:40']['nombre']);
                                                 }else{echo " - ";}?></td>
                                             </tr>  
 
