@@ -13,111 +13,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/pages/loaderStyle.css"></link>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/fontawesome/css/all.css">
     <title>SEE - Kardex</title>
     <link rel="shortcut icon" href="">
 </head>
 <body>
+<div id="contenedor_carga"><div id="carga"></div></div>
     <div class="main flex">
         <div class="column kardex full">
             <div class="row-responsive">
-                <div class="column align-center justify-center menu" tabindex="0">
-                        <div class="smartphone-menu-trigger"></div>
-                        <div class="white-space-24"></div>
-    
-                        <div class="responsive-img item-left justify-center align-center logo">
-                            <img src="<?php echo constant('URL'); ?>public/img/upqroo-newlogo@2x.png" alt="responsive img" title="responsive img" class="cover-img "/>
-                        </div>
-    
-                        <div class="white-space-32"></div>
-                        <!-- <div class="white-space-16"></div> -->
-                        
-                        <div class="column main align-center auto">
-                            <div class="menu-options">
-                                <a href="profile.html" class="item-left">
-                                    <div class="row justify-center align-start">
-                                        <div class="column icon align-center"><i class="fa fa-user"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Datos generales</h4>
-                                        </div>
-                                    </div>
-                                </a>
-                                
-                                <a href="carga-academica.html" class="item-left">
-                                    <div class="row justify-center">
-                                            <div class="column icon align-center"><i class="fa fa-university"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Carga académica</h4>
-                                        </div>                        
-                                    </div>
-                                </a>
-    
-                                <a href="calificaciones.html" class="item-left">
-                                    <div class="row justify-center">
-                                            <div class="column icon align-center"><i class="fa fa-star"></i></div> 
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Calificaciones</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="kardex.html" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
-                                        <div class="column full">
-                                            <h4 class="color-white weight-regular font-small">Kardex</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="horario.html" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Horario</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="noticias.html" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Noticias</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="formatos.html" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Formatos</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="" class="item-left">
-                                    <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
-                                        </div>
-                                    </div>
-                                </a>
-    
-                                <a href="login.html" class="item-left">
-                                    <div class="row item-left justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
-                                        <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Cerrar Sesión</h4>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                </div>  
+
+                <div class="column align-center justify-center menu" tabindex="0"><!--menu-->
+                <?php include './views/menu/menu.php';?>
+                </div><!--menu-->
                 <div class="column align-center body">
                         <div class="row-responsive justify-center header-tittle align-center" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
                             <div class="container-data align-center header-content justify-between">
@@ -328,7 +238,14 @@
         </div> <!--/.column kardex-->
 
     </div> <!--/.main flex-->
-    
+    <script>
+    window.onload = function()
+       {
+        var contenedor = document.getElementById('contenedor_carga');
+        contenedor.style.visibility = 'hidden';
+        contenedor.style.opacity = '0';
+        }
+    </script> 
 </body>
 </html>
 
