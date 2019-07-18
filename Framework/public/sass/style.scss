@@ -39,6 +39,8 @@ $dev: false;
 
 /*      Páginas      */
 
+@import './pages/superadmin';
+
 @import './pages/calificaciones';
 @import './pages/horario';
 @import './pages/kardex';
