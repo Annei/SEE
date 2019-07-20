@@ -485,6 +485,13 @@ button {
   .btn-admin:hover {
     background: #20bcc9; }
 
+.btn-form-admin {
+  padding: 4px 16px;
+  font-size: .9rem;
+  transition: background-color .300s ease-in-out; }
+  .btn-form-admin:hover {
+    background-color: #20bcc9; }
+
 .btn-login {
   padding: 6px 32px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -553,6 +560,19 @@ input, textarea, select, option, label {
 
 .input-info-profile:focus {
   border-bottom: 2px solid #8e8e8e; }
+
+.input-news {
+  width: 100%;
+  background: white;
+  border: 1px solid black;
+  padding: 3px 8px;
+  font-size: 0.9rem; }
+
+.text-admin {
+  border: 1px solid;
+  padding: 4px;
+  font-size: 0.9rem;
+  width: 100%; }
 
 /**
 *   header.scss
@@ -1376,6 +1396,15 @@ table {
   object-position: center;
   border-radius: 4px;
   margin-right: 16px; }
+.noticias .admin {
+  padding: 16px; }
+  .noticias .admin .icons i {
+    margin-right: 9px;
+    margin-top: 2px;
+    color: #20bcc9;
+    transition: color .300s ease-in-out; }
+    .noticias .admin .icons i:hover {
+      color: #2C54B3; }
 .noticias .column-notices {
   padding: 16px;
   width: 90%;
@@ -1385,7 +1414,23 @@ table {
   background-color: #FFFFFF;
   top: 16px; }
   .noticias .column-notices .content-notice {
-    height: 100%; }
+    height: 100%;
+    position: relative;
+    padding: 0px 0 83px 0; }
+    .noticias .column-notices .content-notice .news {
+      height: 87%;
+      overflow-y: scroll; }
+      .noticias .column-notices .content-notice .news .news-item {
+        min-height: 50px; }
+  .noticias .column-notices .filters {
+    position: absolute;
+    width: 100%;
+    bottom: 0; }
+    .noticias .column-notices .filters .select {
+      width: 100%;
+      padding: 4px;
+      border: 1px solid;
+      font-size: 1rem; }
   .noticias .column-notices .profile-logo-mini {
     max-width: 50px;
     min-width: 50px;
@@ -1400,7 +1445,15 @@ table {
   grid-auto-rows: 16px; }
 .noticias .item {
   background-color: #ffffff;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  position: relative; }
+  .noticias .item .icon-edit {
+    position: absolute;
+    right: 16px;
+    top: 21px;
+    transition: color .300s ease-in-out; }
+    .noticias .item .icon-edit:hover {
+      color: #2C54B3; }
   .noticias .item .photothumb {
     width: 100%;
     padding: 0 16px; }
