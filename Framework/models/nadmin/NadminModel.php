@@ -1,8 +1,6 @@
-<?php  
-/**
- * 
- */
-class AuthModel extends Model
+<?php
+
+class NadminModel extends Model
 {
 	
 	function __construct()
@@ -11,13 +9,16 @@ class AuthModel extends Model
 		$this->table = 'sinTablita:3';
 	}
 
-	public function getUser($matricula){
+	public function getSuper($matricula){
 
-		try{
-			
-			$query = $this->DB->MYSQLconnect()->prepare("call getUser(:matri);");
+		try{			
+			$query = $this->DB->MYSQLconnect()->prepare("SELECT matricula, pass, email, type, nombre FROM users WHERE matricula= " . $matricula);
 			$data = [
-				':matri' => $matricula
+				':matricula' => $matricula,
+				':pass'		 => $pass,
+				':email'	 => $email,
+				':type'		 => $type,
+				':nombre'	 => $nombre
 			];
 			$query->execute($data);
 				
@@ -29,7 +30,7 @@ class AuthModel extends Model
 		}
 	}
 
-
+	//MI CAMBIO CHIDO
 	public function getDbfUser($matricula){
 		$con = $this->DB->DBFconnect('DALUMN');
 		$aux = null;
@@ -46,14 +47,14 @@ class AuthModel extends Model
               		// $aux = $fila;
               		$aux = [
 							'matricula' => $fila['ALUCTR'],
-							'nombre'    => trim($fila['ALUAPP']).' '.trim($fila['ALUAPM']).' '.trim($fila['ALUNOM']),
-							'cumple'    => trim($fila['ALUNAC']),
-							'direccion' => trim($fila['ALUTCL']).' '.trim($fila['ALUTNU']).' '.trim($fila['ALUTCO']),
-							'cp'        => trim($fila['ALUTCP']),
-							'cel'       => trim($fila['ALUTTE1']),
-							'tel'       => trim($fila['ALUTTE2']),
-							'email'     => trim($fila['ALUTMAI']),
-							'curp'      => trim($fila['ALUCUR']),
+							'nombre'    => $fila['ALUAPP'].' '.$fila['ALUAPM'].' '.$fila['ALUNOM'],
+							'cumple'    => $fila['ALUNAC'],
+							'direccion' => $fila['ALUTCL'].' '.$fila['ALUTNU'].' '.$fila['ALUTCO'],
+							'cp'        => $fila['ALUTCP'],
+							'cel'       => $fila['ALUTTE1'],
+							'tel'       => $fila['ALUTTE2'],
+							'email'     => $fila['ALUTMAI'],
+							'curp'      => $fila['ALUCUR'],
 							'sex'       => (strcmp($fila['ALUSEX'],'1') == 0 ? 'Hombre': 'Mujer')
               		];
               		break;
@@ -69,34 +70,6 @@ class AuthModel extends Model
 
 	}
 
-	public function addUser($alumn){
-		
-		$items = [];
-		try{
-
-			$sql = "CALL addAlumno(:matricula,:nombre,:pass,:email,:index);";
-			$query = $this->DB->MYSQLconnect()->prepare($sql);
-			
-			$data = [
-				':matricula' => trim($alumn['matricula']),
-				':nombre'	 => $alumn['nombre'],
-				':pass'      => 'secret',
-				':email'     => trim($alumn['matricula']).'@estudiantes.upqroo.edu.mx',
-				':index'     => -1,
-			];
-			
-			$query->execute($data);
-			
-			// $this->DB = null;
-			return true;
-
-		}catch(PDOException $e){
-			echo "<br> error ".$e." <br>";
-			return false;
-		}
-
-	}
-
 
 	/**
 	 * AGREGAR UN NUEVO ADMINISTRADOR
@@ -106,22 +79,22 @@ class AuthModel extends Model
 	 * @param EMAIL 	$email     [description]
 	 * @param INT 		$carrera   [description]
 	 */
-	public function addAdmin($matricula, $nombre, $pass, $email,$carrera, $type){
+	public function addAdmin($matricula, $pass, $email,$carrera, $type, $name){
 		
 		$items = [];
 		try{
 
-			$sql = "CALL agregar_admin(:matricula,:nombre,:pass,:email,:carrera, :type);";
+			$sql = "CALL agregar_admin(:matricula,:pass,:email,:carrera,:type,:nombre);";
 			$query = $this->DB->MYSQLconnect()->prepare($sql);
 			
 			$data = [
 				':matricula' => $matricula,
-				':nombre'	 => $nombre,
 				//':pass'      => $pass,
 				':pass'      => password_hash($pass, PASSWORD_DEFAULT),
 				':email'     => $email,
 				':carrera'   => $carrera,
 				':type'      => $type,
+				':nombre'	 => $name,
 			];
 			
 			$query->execute($data);
@@ -135,7 +108,6 @@ class AuthModel extends Model
 		}
 
 	}
-
-
+  	
 }
 ?>

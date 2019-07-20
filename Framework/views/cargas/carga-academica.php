@@ -24,7 +24,7 @@
                         <div class="smartphone-menu-trigger"></div>
                         <div class="white-space-24"></div>
 
-                         <div class="responsive-img item-left justify-center align-center logo">
+                        <div class="responsive-img item-left justify-center align-center logo">
                         <img src="<?php echo constant('URL'); ?>public/img/upqroo-newlogo@2x.png" alt="responsive img" title="responsive img" class="cover-img "/>
                     </div>
 

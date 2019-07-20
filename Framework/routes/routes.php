@@ -16,6 +16,11 @@
 	$this->newRoute('alumnos/pass','alumno/alumnoController','cambiaPass');
 
 	$this->newRoute('addadmin','auth/authController','crear_admin');
+	$this->newRoute('administrador/datos','administrador/adminController','datosGeneralesadmin');
+
+	$this->newRoute('super-administrador/datos','super/superController','datosGeneralesSuper');
+	$this->newRoute('super-administrador/agregar-administrador','nadmin/nadminController','crear_admin');
+	$this->newRoute('super-administrador/agregar-administrador','nadmin/nadminController','crear_admin','POST');
 
 	$this->newRoute('crearNoticia','notificaciones/notificacionController','crearNoticia');
 	$this->newRoute('noticias','notificaciones/notificacionController','traerNoticia');
@@ -34,6 +39,7 @@
 
 	$this->newRoute('alumnos/kardex','kardex/kardexController','getKardex');
 	$this->newRoute('alumnos/calificaciones','calificaciones/calificacionesController','getCalificaciones');
+
 	
 	// carreras
 
