@@ -50,14 +50,14 @@
     .upload-summary{
         width: 100%;
         input, .dropzone{
-            width: 80%;
+            width: 90%;
             background: $white;
             border: 1px solid $darkGray;
             font-weight: $weightLight;
         }
         .dropzone{
             font-family: $Heebo;
-            i{
+            span > i{
                 display: block;
                 margin-bottom: $marginMedium;
             }

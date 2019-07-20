@@ -34,6 +34,10 @@ class formatosController extends Controller
 	{
         if ($this->validatorAuth($this->auth)) {	
 
+			if($_SESSION['usuario']['type'] == 'admin'){
+				$this->localRedirect('administrador/formatos');
+			}
+
 			$formatos = $this->model->GetFormatos();
 			$this->view->Formatos = $formatos;
 			

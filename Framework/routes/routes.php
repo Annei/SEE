@@ -30,7 +30,8 @@
 	$this->newRoute('alumnos/Descargar','formatos/formatosController','Descargar');
 
 	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin');
-	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin', 'POST');
+	$this->newRoute('administrador/upload','formatos/formatosAdminController','carga','POST');
+	$this->newRoute('administrador/update','formatos/formatosAdminController','actualizar','POST');
 
 	$this->newRoute('alumnos/kardex','kardex/kardexController','getKardex');
 	$this->newRoute('alumnos/calificaciones','calificaciones/calificacionesController','getCalificaciones');

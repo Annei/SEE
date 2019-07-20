@@ -172,19 +172,19 @@
                                         <div class="column align-start">
                                             <div class="column container-input-info-gral">
                                             <h4 class="color-darkgray font-regular">Fecha de Nacimiento</h4>
-                                            <input type="text" name="txtFechaNac" placeholder="<?php echo $this->datos['cumple']; ?>" class="input input-info-profile" required>
+                                            <input type="text" name="txtFechaNac" placeholder="<?php echo $this->datos['cumple']; ?>" class="input input-info-profile" disabled>
                                             </div>
                                         </div>
                                         <div class="column align-center">
                                             <div class="column container-input-info-gral">
                                             <h4 class="color-darkgray font-regular">Clave CURP</h4>
-                                            <input type="text" name="txtCurp" placeholder="<?php echo $this->datos['curp']; ?>" class="input input-info-profile" required>
+                                            <input type="text" name="txtCurp" placeholder="<?php echo $this->datos['curp']; ?>" class="input input-info-profile" disabled>
                                             </div>
                                         </div>
                                         <div class="column align-end">
                                             <div class="column container-input-info-gral">
                                             <h4 class="color-darkgray font-regular">C.P</h4>
-                                            <input type="text" name="txtCp" placeholder="<?php echo $this->datos['cp']; ?>" class="input input-info-profile" required>
+                                            <input type="text" name="txtCp" placeholder="<?php echo $this->datos['cp']; ?>" class="input input-info-profile" disabled>
                                         </div>
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@
                                     <div class="row">
                                         <div class="column container-input-large">
                                             <h4 class="color-darkgray font-regular">Direccion completa</h4>
-                                            <input type="text" name="txtDireccion" placeholder="<?php echo $this->datos['direccion']; ?>" class="input input-info-profile" required>
+                                            <input type="text" name="txtDireccion" placeholder="<?php echo $this->datos['direccion']; ?>" class="input input-info-profile" disabled>
                                         </div>
                                     </div>
                                     <div class="white-space-16"></div>
@@ -200,19 +200,19 @@
                                         <div class="column align-start">
                                             <div class="column container-input-info-gral" >
                                             <h4 class="color-darkgray font-regular">Telefono Domicilio</h4>
-                                            <input type="text" name="txtTelDom" placeholder="018006971" class="input input-info-profile" required>
+                                            <input type="text" name="txtTelDom" placeholder="018006971" class="input input-info-profile" disabled>
                                         </div>
                                         </div>
                                         <div class="column align-center">
                                             <div class="column container-input-info-gral">
                                             <h4 class="color-darkgray font-regular">Telefono Celular</h4>
-                                            <input type="text" name="txtTelCel" placeholder="<?php echo $this->datos['cel']; ?>" class="input input-info-profile" required>
+                                            <input type="text" name="txtTelCel" placeholder="<?php echo $this->datos['cel']; ?>" class="input input-info-profile" disabled>
                                             </div>
                                         </div>
                                         <div class="column align-end">
                                             <div class="column container-input-info-gral" >
                                             <h4 class="color-darkgray font-regular">Correo Electronico</h4>
-                                            <input type="email" name="txtCorreo" placeholder="<?php echo $this->datos['matricula']; ?>@upqroo.alumnos.com" class="input input-info-profile" required>
+                                            <input type="email" name="txtCorreo" placeholder="<?php echo $this->datos['matricula']; ?>@upqroo.alumnos.com" class="input input-info-profile" disabled>
                                             </div>
                                         </div>
                                     </div>

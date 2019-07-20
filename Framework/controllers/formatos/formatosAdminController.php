@@ -35,13 +35,9 @@ class formatosAdminController extends Controller
 
         if ($this->validatorAuth($this->auth)) {	
 
-			if (isset($_POST['archivo'])) {
-
-				$this->model->SubirArchivo($_POST["archivo"],basename($_POST["archivo"])); 
-				unset($_POST["archivo"]);
-
+			if($_SESSION['usuario']['type'] == 'alumno'){
+				$this->localRedirect('alumnos/formatos');
 			}
-				
 			$formatos = $this->model->GetFormatos();
 			$this->view->Formatos = $formatos;
 
@@ -52,6 +48,33 @@ class formatosAdminController extends Controller
         }else{
             $this->localRedirect('login');
         }
+	  }
+
+	  public function carga()
+	  {
+		if ($this->validatorAuth($this->auth)) {	
+			if($_SESSION['usuario']['type'] == 'alumno'){
+				$this->localRedirect('alumnos/formatos');
+			}
+			if (!empty($_FILES)) {
+				$this->model->SubirArchivo($_FILES['file']['tmp_name'],$_FILES['file']['name'],$_POST['name_file'] . '.' . explode('.',$_FILES['file']['name'])[1]);
+			}      
+        }else{
+            $this->localRedirect('login');
+		}
+	  }
+	  public function actualizar()
+	  {
+		if ($this->validatorAuth($this->auth)) {	
+			if($_SESSION['usuario']['type'] == 'alumno'){
+				$this->localRedirect('alumnos/formatos');
+			}
+			if (!empty($_FILES)) {
+				$this->model->ActualizarArchivo($_FILES['file']['tmp_name'],$_FILES['file']['name'],$_POST['name_file'] . '.' . explode('.',$_FILES['file']['name'])[1],$_POST['name_file_old']);
+			}      
+        }else{
+            $this->localRedirect('login');
+		}
 	  }
 	
 }
