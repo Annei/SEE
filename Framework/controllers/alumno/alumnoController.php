@@ -32,8 +32,21 @@ class AlumnoController extends Controller
 		if ($this->validatorAuth($this->auth)) {
 			
 		$datos = $this->model->getDbfUser($_SESSION['usuario']['matricula']);
-			var_dump($datos);
+			//var_dump($datos);
 			$this->view->datos = $datos;
+
+			//$creditos_total = $this->model->creditosTotales($_SESSION['usuario']['matricula']);
+			$getAcademicPeriod = $this->model->procesarDatosPeriodo($_SESSION['usuario']['matricula']);
+            $this->view->getAcademicPeriod = $getAcademicPeriod;
+
+			$clave = $this->model->getClave($_SESSION['usuario']['matricula']);
+			$this->view->clave = $clave;
+
+			$creditos = $this->model->creditos($_SESSION['usuario']['matricula']);
+			$this->view->creditos = $creditos;
+			//$this->view->creditos_total = $creditos_total;
+			$periodo = $this->model->getPeriodo($clave);
+			$this->view->periodo = $periodo;
 			$this->render();
 		}else{
 			$this->localRedirect('login');

@@ -116,7 +116,7 @@ class AlumnoModel extends Model
 				if(strcmp($fila["ALUCTR"], $matricula) == 0){
 					$claveCarrera = $fila['CARCVE'];
 					$clavePlan = $fila['PLACVE'];
-					return $fila['CALCAC'].' '. $auxClase->creditosTotales($claveCarrera, $clavePlan);
+					return $fila['CALCAC'].' de '. $auxClase->creditosTotales($claveCarrera, $clavePlan);
 				}
 			}
 		}
@@ -373,9 +373,118 @@ public function getPeriodo($clavedeplan)
            return $matter;
        }
    }
-    // FIN PARTE WAKAI
+	// FIN PARTE WAKAI
+	/**
+	 * Metodo: procesarDatosPeriodo
+	 * Descripcion: En este metodo se obtiene la descripcion de la carrera, 
+	 * el periodo en el que ingreso el alumno, la clave de la carrera, la clave del plan,
+	 * y se adjuntan los datos generales del alumno, todo en un array.
+	 * NOTA: queda pendiente presentar el periodo actual, sin embargo parece inecesario porque ya existe
+	 * vista general.
+	 * Autor: Gloria Aguilar
+	 * Fecha: 14/06/2019** */
+	public function procesarDatosPeriodo($matricula)
+	{
+		$datos              = $this->getAlumnoUltimoCursado($matricula);
+		$periodoAlumnoIngre = $this->getPeriodoAlumnoIngreso($datos['plan_clave'],$datos['clave_carrera']);
+		$descripcionCarrera = $this->getCarreras($datos['clave_carrera']);
+		$datosAlum			= $this->getDbfUser($matricula);
+		//$getAcademicPeriod = $this->procesarDatosPeriodo($_SESSION['usuario']['matricula']);
+		//$this->view->getAcademicPeriod = $getAcademicPeriod;
+		$datos=array_merge($periodoAlumnoIngre,$descripcionCarrera);
+		$datosGenerales=array_merge($datos,$datosAlum);
+		return $datosGenerales;
+		
+	}
 
+	/***
+	 * Metodo: getPeriodoAlumnoIngreso
+	 * Descripcion: Se obtienen el periodo del alumno cuando ingreso a la institucion
+	 * Nota: Parecer ser inecesario pero así se muestra en la vista de Front
+	 * Autor: Gloria Aguilar
+	 * Fecha: 14/06/2019** */
+	 public function getPeriodoAlumnoIngreso($planClave,$carreraClave){
+		$con = $this->DB->DBFconnect('DPLANE');
+		$aux = null;
+		if ($con) {
+			$numero_registros = dbase_numrecords($con);
+          for ($i = 1; $i <= $numero_registros; $i++) {
+              $fila = dbase_get_record_with_names($con, $i);
+              if (strcmp($fila["PLACVE"],$planClave) == 0) {
+				if (strcmp($fila["CARCVE"],$carreraClave) == 0) {
+					$aux = array(
+						'plan_inicio'  => $fila['PLACOF'],
+						'clave_carrera' => $fila['CARCVE'],
+						'plan_clave'    => $fila['PLACVE']
+				  );
+				  break;
+				}
+              }              
+          }
+          dbase_close($con);
+          return $aux;
+		}
+		return null;
+	}
 
+	/**
+	 * Metodo: getAlumnoUltimoCursado,
+	 * Descripcion: Este método obtiene la clave de la carrera, el ultimo cuatrimestre cursado,
+	 * y el grupo al que pertenece. Este método servirá para obtener datos de otras tables.
+	 * Autor: Gloria Aguilar
+	 * Módulo: Carga Alumno
+	 * Fecha: 13/06/2019
+	 * */
+	public function getAlumnoUltimoCursado($matricula){
+		$con = $this->DB->DBFconnect('DCALUM');
+		$aux = null;
+		if ($con) {
+			$numero_registros = dbase_numrecords($con);
+          for ($i = 1; $i <= $numero_registros; $i++) {
+              $fila = dbase_get_record_with_names($con, $i);
+              if (strcmp($fila["ALUCTR"],$matricula) == 0) {
+              		// $aux = $fila;
+              		$aux = array(
+							'clave_carrera' => $fila['CARCVE'],
+							'plan_clave'    => $fila['PLACVE'],
+							'periodo_ingreso' =>$fila['CALING']
+					  );
+              		break;
+              }              
+          }
+          dbase_close($con);
+          return $aux;
+		}
+		return null;
+	}
+
+/***
+	 * Metodo: getCarreras
+	 * Descripcion: se obtiene el nombre y la descripcion de la carrera
+	 * NOTA: parece ser inecesario porque ya existe una vista General y ahí se pueden obtener datos
+	 * Autor: Gloria Aguilar
+	 * Fecha: 14/06/2019** */
+	 public function getCarreras($clave_carrera)
+	 {
+		 $con = $this->DB->DBFconnect('DCARRE');
+		 $aux = null;
+		 if ($con) {
+			 $numero_registros = dbase_numrecords($con);
+		   for ($i = 1; $i <= $numero_registros; $i++) {
+			   $fila = dbase_get_record_with_names($con, $i);
+				 if (strcmp($fila["CARCVE"],$clave_carrera) == 0) {
+					 $aux = array(
+						 'carrera_nombre'=> $fila['CARNOM'],
+						 'carrera_abre'  => $fila['CARNCO']
+				   );
+				   break;
+				 }            
+			   }		
+		   dbase_close($con);
+		   return $aux;
+		 }
+		 return null;
+	 }
 // PARTE DEL LUCIO
 
 

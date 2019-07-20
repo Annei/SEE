@@ -16,7 +16,7 @@
     background-color: $white;
 }
 
-#modal-formats .modal-content, #modal-edit .modal-content {
+#modal-formats .modal-content, #modal-edit .modal-content, #modal-noticia-edit .modal-content{
     width: 40%;
     position: relative;
     background: $white;
@@ -50,14 +50,14 @@
     .upload-summary{
         width: 100%;
         input, .dropzone{
-            width: 80%;
+            width: 90%;
             background: $white;
             border: 1px solid $darkGray;
             font-weight: $weightLight;
         }
         .dropzone{
             font-family: $Heebo;
-            i{
+            span > i{
                 display: block;
                 margin-bottom: $marginMedium;
             }

@@ -1,7 +1,7 @@
 <?php  
 /**
-@author: Universidad Politecnica - Gustavo
-@description: Modelo para los formatos
+ *@author: Universidad Politecnica - Gustavo
+ *@description: Modelo para los formatos
  */
 class FormatosModel extends Model
 {
@@ -29,12 +29,23 @@ class FormatosModel extends Model
         return $id_ftp; //Devuelve el manejador a la función
     }
 
-    public function SubirArchivo($archivo_local,$archivo_remoto){
+    public function SubirArchivo($archivo_local,$archivo_remoto,$rename){
         //Sube archivo de la maquina Cliente al Servidor (Comando PUT)
         $id_ftp=$this->ConectarFTP(); //Obtiene un manejador y se conecta al Servidor FTP 
         ftp_put($id_ftp,$archivo_remoto,$archivo_local,FTP_BINARY);
-        //Sube un archivo al Servidor FTP en modo Binario
+        ftp_rename($id_ftp, $archivo_remoto, $rename);
         ftp_quit($id_ftp); //Cierra la conexion FTP
+        //Sube un archivo al Servidor FTP en modo Binario
+    }
+
+    public function ActualizarArchivo($archivo_local,$archivo_remoto,$rename,$old_name){
+        //Sube archivo de la maquina Cliente al Servidor (Comando PUT)
+        $id_ftp=$this->ConectarFTP(); //Obtiene un manejador y se conecta al Servidor FTP 
+        ftp_delete($id_ftp, $old_name);
+        ftp_put($id_ftp,$archivo_remoto,$archivo_local,FTP_BINARY);
+        ftp_rename($id_ftp, $archivo_remoto, $rename);
+        ftp_quit($id_ftp); //Cierra la conexion FTP
+        //Sube un archivo al Servidor FTP en modo Binario
     }
 
     public function ObtenerRuta(){

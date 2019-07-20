@@ -11,15 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/pages/loaderStyle.css"></link>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>/public/fontawesome/css/all.css">
     <title>SEE - Carga acádemica</title>
     <link rel="shortcut icon" href="">
 </head>
 <body>
+    <div id="contenedor_carga"><div id="carga"></div></div>
     <div class="main flex">
         <div class="column carga-academica full">
             <div class="row-responsive">
+
                 <div class="column align-center justify-center menu" tabindex="0">
                         <div class="smartphone-menu-trigger"></div>
                         <div class="white-space-24"></div>
@@ -117,6 +120,11 @@
                             </div>
                         </div>
                 </div>    
+
+                <div class="column align-center justify-center menu" tabindex="0"> <!--menu-->
+                <?php include './views/menu/menu.php';?>                  
+                </div>   <!--menu--> 
+
                 <div class="column full body">
                 <div class="row-responsive ">
                         <div class="row-responsive justify-center header-tittle align-center" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
@@ -199,5 +207,14 @@
             </div>
         </div>
     </div> 
+
+    <script>
+    window.onload = function()
+    {
+    var contenedor = document.getElementById('contenedor_carga');
+    contenedor.style.visibility = 'hidden';
+    contenedor.style.opacity = '0';
+    }
+    </script>
 </body>
 </html>
