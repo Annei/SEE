@@ -31,7 +31,7 @@ class NadminController extends Controller
 	{
 		if ($this->validatorAuth($this->auth)) {
 			
-		$datos = $this->model->getSuper(201600112);
+		$datos = $this->model->getSuper($_SESSION['usuario']['matricula']);
 			$this->view->datos = $datos;
 			//var_dump($datos);
 			$this->render();

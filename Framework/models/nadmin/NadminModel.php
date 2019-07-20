@@ -12,13 +12,9 @@ class NadminModel extends Model
 	public function getSuper($matricula){
 
 		try{			
-			$query = $this->DB->MYSQLconnect()->prepare("SELECT matricula, pass, email, type, nombre FROM users WHERE matricula= " . $matricula);
+			$query = $this->DB->MYSQLconnect()->prepare("call getUser(:matri);");
 			$data = [
-				':matricula' => $matricula,
-				':pass'		 => $pass,
-				':email'	 => $email,
-				':type'		 => $type,
-				':nombre'	 => $nombre
+				':matri' => $matricula
 			];
 			$query->execute($data);
 				
