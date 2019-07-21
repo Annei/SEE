@@ -83,13 +83,7 @@ class AuthController extends Controller
 								break;
 							case 'admin':
 								//echo "eres admin";
-
-								//password_hash($pass, PASSWORD_DEFAULT);
-								//if (password_verify($pass, $admin['pass'])) {
 								$this->localRedirect('administrador/datos');
-								//}
-								// $this->view->alumn = $alumn;
-								// $this->view->render('alumnos/datosGenerales');
 								break;
 							case 'superadmin':
 								$mate = $superAdmin['matricula'];	
@@ -181,6 +175,13 @@ class AuthController extends Controller
 		// se pueden mandar errores, get
 
 
+	}
+
+	public function cambiaPass(){
+	echo $matricula = $_POST['matricula']; 
+	#HOLA, NO SE TE OLVIDE QUE DEBEN ENCRIPTAR LA CONTRASEÑA ;)
+	$this->model->cambiaPass($matricula, 'secret');
+	$this->localRedirect('login');
 	}
 
 

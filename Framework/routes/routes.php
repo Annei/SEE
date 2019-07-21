@@ -5,6 +5,7 @@
  */
 	$this->newRoute('login','auth/authController','render');
 	$this->newRoute('login','auth/authController','login','POST');
+	$this->newRoute('newpass','auth/authController','cambiaPass','POST');
 	$this->newRoute('logout','auth/authController','logout');
 
 
@@ -13,7 +14,7 @@
 	//$this->newRoute('alumnos/horario','horario/horarioController','buscarHorario');
 	//$this->newRoute('alumnos/kardex', 'kardex/kardexController','getKardex');
 
-	$this->newRoute('alumnos/pass','alumno/alumnoController','cambiaPass');
+	$this->newRoute('alumnos/datos','alumno/alumnoController','cambiaPass', 'POST');
 
 	$this->newRoute('addadmin','auth/authController','crear_admin');
 	$this->newRoute('administrador/datos','administrador/adminController','datosGeneralesadmin');

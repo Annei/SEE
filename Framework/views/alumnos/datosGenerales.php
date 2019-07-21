@@ -160,7 +160,7 @@
 		<div class="modal modal-confirm column justify-center align-center hidden  wow animated" data-wow-duration=".7s" id="modal-password">
                 <div class="container modal-content align-center column" >
                     <div class="row-responsive justify-center header-tittle align-center header-tittle-modal" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
-                        <div class="container-data header-content justify-center"">
+                        <div class="container-data header-content justify-center">
                             <div class="row auto">
                                 <div class="column auto align-center">
                                     <h3 class="color-white weight-bold font-double">Cambiar Contraseña</h3>
@@ -175,7 +175,7 @@
                     </div>
                     <div class="upload-summary column">
                         <div class="white-space-24"></div>
-                        <form class="content column justify-center align-center">
+                        <form class="content column justify-center align-center" method="post" action="">
                             <input type="password" name="name_file" placeholder="Nueva Contraseña" class="input" required>
                             <div class="white-space-24"></div>
                             <button type="submit" id="submit-all" class="btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white">
