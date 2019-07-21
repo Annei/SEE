@@ -55,16 +55,16 @@ class AuthController extends Controller
 				
 
 				$user = $this->model->getUser($matricula);
-
+				$admin = $this->model->getUser($matricula);
 				// el usuario esta en ddbb MYSQL
 				if ($user) {
 					// echo "Estas en mysql <br>";
-					if (strcmp($user['pass'],$pass) == 0) {
+					if (strcmp($user['pass'],$pass) == 0 || password_verify($pass, $admin['pass'])) {
 						
 						$_SESSION["usuario"]=[
 							'matricula'  => $user['matricula'],
 							'nombre'	 => $user['nombre'],
-							'index'      => $user['indexx'],
+							'index'      => $user['indexx'],	
 							'type'       => $user['type'],
 							# Datos que pueden tener o no
 							'email'      => $user['email'], 
@@ -73,8 +73,8 @@ class AuthController extends Controller
 							'carrera'    => $user['carrera'],
 						];
 						$alumn = $this->model->getDbfUser($matricula);
-						$admin = $this->model->getDbfUser($matricula);
-						$superAdmin = $this->model->getDbfUser($matricula);
+						$admin = $this->model->getUser($matricula);
+						$superAdmin = $this->model->getUser($matricula);
 
 						switch ($_SESSION['usuario']['type']) {
 							case 'alumno':
@@ -82,15 +82,20 @@ class AuthController extends Controller
 								$this->localRedirect('alumnos/datos');
 								break;
 							case 'admin':
-							//echo "eres admin";
-								$mate = $admin['matricula'];
+								//echo "eres admin";
+
+								//password_hash($pass, PASSWORD_DEFAULT);
+								//if (password_verify($pass, $admin['pass'])) {
 								$this->localRedirect('administrador/datos');
+								//}
 								// $this->view->alumn = $alumn;
 								// $this->view->render('alumnos/datosGenerales');
 								break;
 							case 'superadmin':
-								$mate = $superAdmin['matricula'];
+								$mate = $superAdmin['matricula'];	
+
 								$this->localRedirect('super-administrador/datos');
+								
 								// $this->view->alumn = $alumn;
 								// $this->view->render('alumnos/datosGenerales');
 								break;
