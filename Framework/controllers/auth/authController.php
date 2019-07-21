@@ -27,12 +27,11 @@ class AuthController extends Controller
 					$this->localRedirect('alumnos/datos');
 					break;
 				case 'admin':
-				echo "eres admin";
-					$this->localRedirect('admin');
+				//echo "eres admin";
+					$this->localRedirect('administador/datos');
 					break;
 				case 'superadmin':
-				echo "eres Super admin";
-					$this->localRedirect('speradmin');
+					$this->localRedirect('super-administrador/datos');
 					break;
 				
 				default:
@@ -43,9 +42,9 @@ class AuthController extends Controller
 			// echo "no existe";
 			$this->view->render($this->routeView);
 			
-		}
-		
+		}	
 	}
+
 	public function login(){
 
 		if (isset($_POST['matricula']) && isset($_POST['pass'])) {
@@ -55,8 +54,6 @@ class AuthController extends Controller
 			if (filter_var($matricula, FILTER_VALIDATE_INT) && !strcmp($pass, '') == 0) {
 				
 
-				
-				
 				$user = $this->model->getUser($matricula);
 
 				// el usuario esta en ddbb MYSQL
@@ -76,6 +73,8 @@ class AuthController extends Controller
 							'carrera'    => $user['carrera'],
 						];
 						$alumn = $this->model->getDbfUser($matricula);
+						$admin = $this->model->getDbfUser($matricula);
+						$superAdmin = $this->model->getDbfUser($matricula);
 
 						switch ($_SESSION['usuario']['type']) {
 							case 'alumno':
@@ -83,12 +82,15 @@ class AuthController extends Controller
 								$this->localRedirect('alumnos/datos');
 								break;
 							case 'admin':
-							echo "eres admin";
+							//echo "eres admin";
+								$mate = $admin['matricula'];
+								$this->localRedirect('administrador/datos');
 								// $this->view->alumn = $alumn;
 								// $this->view->render('alumnos/datosGenerales');
 								break;
 							case 'superadmin':
-							echo "eres Super admin";
+								$mate = $superAdmin['matricula'];
+								$this->localRedirect('super-administrador/datos');
 								// $this->view->alumn = $alumn;
 								// $this->view->render('alumnos/datosGenerales');
 								break;
@@ -105,6 +107,9 @@ class AuthController extends Controller
 					}
 				}else {
 					$alumn = $this->model->getDbfUser($matricula);
+					$admin = $this->model->getDbfUser($matricula);
+					$superAdmin = $this->model->getDbfUser($matricula);
+
 					if ($alumn) {
 						// var_dump($alumn);
 						// crear registro en mysql
@@ -127,12 +132,16 @@ class AuthController extends Controller
 								$this->localRedirect('alumnos/datos');
 								break;
 							case 'admin':
-							echo "eres admin";
-								// $this->view->alumn = $alumn;
-								// $this->view->render('alumnos/datosGenerales');
+							//echo "eres admin";
+								$mate = $admin['matricula'];
+								$this->localRedirect('administrador/datos');
+									// $this->view->alumn = $alumn;
+									// $this->view->render('alumnos/datosGenerales');
 								break;
 							case 'superadmin':
-							echo "eres Super admin";
+							//echo "eres Super admin";
+								$mate = $superAdmin['matricula'];
+								$this->localRedirect('super-administrador/datos');
 								// $this->view->alumn = $alumn;
 								// $this->view->render('alumnos/datosGenerales');
 								break;
@@ -177,14 +186,6 @@ class AuthController extends Controller
 		}
 		$this->localRedirect('login');
 	}
-
-
-
-	public function crear_admin(){
-		// $matricula, $nombre, $pass, $email,$carrera, $type
-		$this->model->addAdmin(201600321, 'Lolito Fernandez','pass','201600321@gmail.com',1,'admin');
-	} 
-
 
 }
 ?>

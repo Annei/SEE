@@ -817,14 +817,19 @@ table {
     position: relative; }
   #modal-formats .modal-content .upload-summary, #modal-edit .modal-content .upload-summary, #modal-noticia-edit .modal-content .upload-summary {
     width: 100%; }
-    #modal-formats .modal-content .upload-summary input, #modal-formats .modal-content .upload-summary .dropzone, #modal-formats .modal-content .upload-summary textarea, #modal-edit .modal-content .upload-summary input, #modal-edit .modal-content .upload-summary .dropzone, #modal-edit .modal-content .upload-summary textarea, #modal-noticia-edit .modal-content .upload-summary input, #modal-noticia-edit .modal-content .upload-summary .dropzone, #modal-noticia-edit .modal-content .upload-summary textarea {
-      width: 80%;
+
+    #modal-formats .modal-content .upload-summary input, #modal-formats .modal-content .upload-summary .dropzone, #modal-edit .modal-content .upload-summary input, #modal-edit .modal-content .upload-summary .dropzone {
+      width: 90%;
+
+
       background: #FFFFFF;
       border: 1px solid #8e8e8e;
       font-weight: 300; }
     #modal-formats .modal-content .upload-summary .dropzone, #modal-edit .modal-content .upload-summary .dropzone, #modal-noticia-edit .modal-content .upload-summary .dropzone {
       font-family: "Heebo", sans-serif; }
-      #modal-formats .modal-content .upload-summary .dropzone i, #modal-edit .modal-content .upload-summary .dropzone i, #modal-noticia-edit .modal-content .upload-summary .dropzone i {
+
+      #modal-formats .modal-content .upload-summary .dropzone span > i, #modal-edit .modal-content .upload-summary .dropzone span > i {
+
         display: block;
         margin-bottom: 16px; }
 

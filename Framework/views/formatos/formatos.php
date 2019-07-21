@@ -47,7 +47,7 @@
                                 <div class="column">
                                 <i class="font-triple color-lightBlue fa fa-file"></i>
                                 <div class="white-space-16"></div>
-                                <h3 class="font-text color-darkBlue weight-bold"><?php echo substr($item,1,-5) ?></h3>
+                                <h3 class="font-text color-darkBlue weight-bold"><?php echo explode('.',substr($item,1))[0] ?></h3>
                                 </div>
                             </div>
                             <a href="<?php echo constant('URL') . "documentos".$item; ?>" download="<?php $item; ?>">
