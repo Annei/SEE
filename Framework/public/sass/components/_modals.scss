@@ -64,3 +64,51 @@
         }
     }
 }
+#modal-formats .modal-content, #modal-edit .modal-content, #modal-password .modal-content{
+    width: 40%;
+    position: relative;
+    background: $white;
+    border-radius: 4px;
+
+    #close-modal {
+        position: absolute;
+        top: 15px;
+        right: 16px;
+        //background: $white;
+        color: $white;
+        &:hover {
+            color : $lightBlue;
+        }
+        i {
+            font-size: $fontDouble;
+        }
+        
+    }
+    .header-tittle-modal{
+        border-radius: 4px;
+        height: 70px;
+    }
+    .cargar-archivo{
+        border:1px solid #000;
+    }
+    #btn-bottom {
+        border-radius: 0 0 4px 4px;
+        position: relative;
+    }
+    .upload-summary{
+        width: 100%;
+        input, .dropzone{
+            width: 80%;
+            background: $white;
+            border: 1px solid $darkGray;
+            font-weight: $weightLight;
+        }
+        .dropzone{
+            font-family: $Heebo;
+            i{
+                display: block;
+                margin-bottom: $marginMedium;
+            }
+        }
+    }
+}
