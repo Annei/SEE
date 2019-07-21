@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/style.css">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL'); ?>public/css/animate.css"></link>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/modals.js"></script>
     <title>SEE - Kardex</title>
     <link rel="shortcut icon" href="">
 </head>
@@ -67,6 +70,10 @@
                                         <div class="white-space-32"></div>
                                     <?php endif ?>
                                     <!--Errores fin-->     
+									<div class="white-space-24"></div>
+                                    <div class="row justify-center">
+                                    <a href="javascript:void(0)" onclick="openModal('modal-password')" class="color-lightBlue weight-semi text-center">¿Olvidaste tu contraseña?</a>
+                                    </div>
                                     
                                     <div class="white-space-24"></div>
                                     <div class="row justify-center">
@@ -82,6 +89,36 @@
             </div> <!--/.background login-->
             
         </div> <!--/.column login-->
+		        <div class="modal modal-confirm column justify-center align-center hidden  wow animated" data-wow-duration=".7s" id="modal-password">
+                <div class="container modal-content align-center column" >
+                    <div class="row-responsive justify-center header-tittle align-center header-tittle-modal" style="background-image: url(<?php echo constant('URL'); ?>public/img/new-footer-blue.png)">
+                        <div class="container-data header-content justify-center">
+                            <div class="row auto">
+                                <div class="column auto align-center">
+                                    <h3 class="color-white weight-bold font-double">Cambiar Contraseña</h3>
+                                </div>  
+                            </div>
+                            <div class="row auto">
+                                <a href="javascript:void(0)" id="close-modal" onclick="closeModal('modal-password')">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="upload-summary column">
+                        <div class="white-space-24"></div>
+                        <form class="content column justify-center align-center" method="post" action="newpass">
+                            <input type="text" name="matricula" placeholder="Matricula" class="input" required>
+                            <div class="white-space-24"></div>
+                            <button type="submit" id="submit-all" class="btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white">
+                                <i class="far fa-save icon-btn"></i>
+                                Guardar Cambios
+                            </button>
+                        </form>
+                    </div>
+                <div class="white-space-32"></div>
+                </div>
+            </div>
 
     </div> <!--/.main flex-->
     
