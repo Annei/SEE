@@ -55,7 +55,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>noticias" class="item-left">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
                                         <div class = "column full">
