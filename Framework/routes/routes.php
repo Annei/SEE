@@ -52,6 +52,7 @@
 	$this->newRoute('administrador/update','formatos/formatosAdminController','actualizar','POST');
 
 	$this->newRoute('alumnos/kardex','kardex/kardexController','getKardex');
+	$this->newRoute('alumnos/kardexPdf', 'kardex/kardexPdfController', 'kardexPdf');
 	$this->newRoute('alumnos/calificaciones','calificaciones/calificacionesController','getCalificaciones');
 
 	$this->newRoute('administrador/cargarNoticia','notificaciones/notificacionController','crearNoticia');
