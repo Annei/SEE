@@ -1,4 +1,3 @@
-
 <?php
 class KardexModel extends Model
 {
@@ -69,8 +68,16 @@ class KardexModel extends Model
 					$claveCarrera = $fila['CARCVE'];
 					$clavePlan = $fila['PLACVE'];
 					$creditos =  $fila['CALCAC'];
+					if ($creditos == ""){
+						$creditos =  0;
+					}
 					$creditos_total = $auxClase->creditosTotales($claveCarrera, $clavePlan);
-					$porcentaje = $creditos * 100 / $creditos_total;
+					if ($creditos_total == 0){
+						$porcentaje = 0;
+					}
+					else{
+						$porcentaje = $creditos * 100 / $creditos_total;
+					}
 					return round($porcentaje, 2);
 				}
 			}
@@ -237,6 +244,197 @@ class KardexModel extends Model
 		return null;
 		
 	}
-}
+	/* Retorna las materias con calificacion menor a 7 (reprobadas)
+     * La informacion la obtiene del DBF DKARDE.
+     * Informacion de las columnas del DBF DKARDE:
+     * claveMat     = clave de la materia
+     * nombreMat    = nombre de la materia
+     */
+    public function materiasReprobadas($matricula){
 
+        $datos = $this->DB->DBFconnect("DKARDE");
+        $info = array();
+        $auxClase = new KardexModel;
+
+        if($datos){
+
+            $numero_registros = dbase_numrecords($datos);
+            for($i = 1; $i <= $numero_registros; $i++){
+                
+                $fila = dbase_get_record_with_names($datos, $i);
+                if(strcmp($fila["ALUCTR"], $matricula) == 0 && $fila["KARCAL"] < 7){
+
+                    $aux = [
+                            'claveMat'      => $fila['MATCVE'],
+                            'nombreMat'     => $auxClase->materia($fila['MATCVE'])
+                    ];
+                    array_push($info, $aux);  
+                }
+            }
+            return $info;
+        }
+    }
+
+     /* Retorna las materias que ya ha cursado el alumno
+     * La informacion la obtiene del DBF DKARDE.
+     * Informacion de las columnas del DBF DKARDE:
+     * aluctr   = matricula del alumno
+     * matcve   = clave de la materia
+     */
+    public function materiasCursadas($matricula){
+
+        $datos = $this->DB->DBFconnect("DKARDE");
+        $materias = array();
+        
+        if($datos){
+
+            $numero_registros = dbase_numrecords($datos);
+            for($i = 1; $i <= $numero_registros; $i++){
+                
+                $fila = dbase_get_record_with_names($datos, $i);
+                
+                if(strcmp($fila["ALUCTR"], $matricula) == 0){
+                    array_push($materias, $fila['MATCVE']);
+                } 
+            }
+            return $materias;
+        }
+    }
+
+    /* Retorna las materias que no ha cursado o ha reprobado el alumno
+     * La informacion la obtiene del DBF DRETIC y de los metodos
+     * materiasReprobadas y materiasCursadas.
+     * Lo que se hace primero es ejecutar el metodo materiasReprobadas para 
+     * agregar al array que sera devuelto las materias que el alumno reprobo,
+     * despues se ejecuta el metodo materias cursadas para guardar en otro array
+     * las materias que el alumno ya curso y asi puedan compararse con las
+     * materias que incluye el plan de estudios.
+     * Tambien se hace uso del metodo materias para obtener el nombre de estas.
+     * Informacion de las columnas del DBF DRETIC:
+     * carcve   = clave de la carrera
+     * placve   = clave del plan de estudios
+     * espcve   = valor especial de algunas materias (por si cambiaron algo en el plan)
+     * matcve   = clave de la materia
+     */
+    public function materiasNCursadas($matricula, $claveCarrera, $clavePlan){
+
+        $datos = $this->DB->DBFconnect("DRETIC");
+        $auxClase = new KardexModel;
+        $info = $auxClase->materiasReprobadas($matricula);
+        $materias = $auxClase->materiasCursadas($matricula);
+        
+        if($datos){
+
+            $numero_registros = dbase_numrecords($datos);
+            for($i = 1; $i <= $numero_registros; $i++){
+
+                $aux2 = 0;
+                
+                $fila = dbase_get_record_with_names($datos, $i);
+                if(strcmp($fila["CARCVE"], $claveCarrera) == 0 && strcmp($fila["PLACVE"], $clavePlan) == 0 && $fila["ESPCVE"] == 0){
+
+                    for($j = 0; $j < count($materias); $j++){
+                        if(strcmp($fila['MATCVE'], $materias[$j]) == 0){
+                            break;
+                            
+                        } elseif($j == count($materias) - 1){
+                            $aux2 = 1;
+                        }
+                    }
+                    if($aux2 == 1){
+                        $aux = [
+                            'claveMat'      => $fila['MATCVE'],
+                            'nombreMat'     => $auxClase->materia($fila['MATCVE'])
+                        ];
+                        array_push($info, $aux);
+
+                    }
+                }
+            }
+            return $info;
+        }
+    }
+
+    /* Obtiene la matricula y datos del plan de estudios del alumno
+     * para poder ejecutar el metodo materiasNCursadas
+     * La informacion la obtiene del DBF CALUM.
+     * Informacion de las columnas del DBF CALUM:
+     * aluctr   = matricula del alumno
+     * carcve   = clave de la carrera
+     * placve   = clave del plan de estudios
+     */
+    public function materiasFaltantes($matricula){
+
+        $datos = $this->DB->DBFconnect("DCALUM");
+        $auxClase = new KardexModel;
+
+        if($datos){
+
+            $numero_registros = dbase_numrecords($datos);
+            for($i = 1; $i <= $numero_registros; $i++){
+                
+                $fila = dbase_get_record_with_names($datos, $i);
+                if(strcmp($fila["ALUCTR"], $matricula) == 0){
+                    return $auxClase->materiasNCursadas($fila['ALUCTR'], $fila['CARCVE'], $fila['PLACVE']);
+                }
+            }
+        }
+    }
+    public function procesarDatosPeriodo($matricula)
+	{
+		$datos              = $this->getAlumnoUltimoCursado($matricula);
+		$periodoAlumnoIngre = $this->getPeriodoAlumnoIngreso($datos['plan_clave'],$datos['clave_carrera']);
+		$descripcionCarrera = $this->getCarreras($datos['clave_carrera']);
+		$datosAlum			= $this->getDbfUser($matricula);
+		//$getAcademicPeriod = $this->procesarDatosPeriodo($_SESSION['usuario']['matricula']);
+		//$this->view->getAcademicPeriod = $getAcademicPeriod;
+		$datos=array_merge($periodoAlumnoIngre,$descripcionCarrera);
+		$datosGenerales=array_merge($datos,$datosAlum);
+		return $datosGenerales;
+		
+	}
+	public function getAlumnoUltimoCursado($matricula){
+		$con = $this->DB->DBFconnect('DCALUM');
+		$aux = null;
+		if ($con) {
+			$numero_registros = dbase_numrecords($con);
+          for ($i = 1; $i <= $numero_registros; $i++) {
+              $fila = dbase_get_record_with_names($con, $i);
+              if (strcmp($fila["ALUCTR"],$matricula) == 0) {
+              		// $aux = $fila;
+              		$aux = array(
+							'clave_carrera' => $fila['CARCVE'],
+							'plan_clave'    => $fila['PLACVE'],
+							'periodo_ingreso' =>$fila['CALING']
+					  );
+              		break;
+              }              
+          }
+          dbase_close($con);
+          return $aux;
+		}
+		return null;
+	}
+	public function getCarreras($clave_carrera)
+	 {
+		 $con = $this->DB->DBFconnect('DCARRE');
+		 $aux = null;
+		 if ($con) {
+			 $numero_registros = dbase_numrecords($con);
+		   for ($i = 1; $i <= $numero_registros; $i++) {
+			   $fila = dbase_get_record_with_names($con, $i);
+				 if (strcmp($fila["CARCVE"],$clave_carrera) == 0) {
+					 $aux = array(
+						 'carrera_nombre'=> $fila['CARNOM'],
+						 'carrera_abre'  => $fila['CARNCO']
+				   );
+				   break;
+				 }            
+			   }		
+		   dbase_close($con);
+		   return $aux;
+		 }
+		 return null;
+	 }
+}
 ?>
