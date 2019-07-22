@@ -5,6 +5,7 @@
  */
 	$this->newRoute('login','auth/authController','render');
 	$this->newRoute('login','auth/authController','login','POST');
+	$this->newRoute('newpass','auth/authController','cambiaPass','POST');
 	$this->newRoute('logout','auth/authController','logout');
 
 
@@ -13,9 +14,14 @@
 	//$this->newRoute('alumnos/horario','horario/horarioController','buscarHorario');
 	//$this->newRoute('alumnos/kardex', 'kardex/kardexController','getKardex');
 
-	$this->newRoute('alumnos/pass','alumno/alumnoController','cambiaPass');
+	$this->newRoute('alumnos/datos','alumno/alumnoController','cambiaPass', 'POST');
 
 	$this->newRoute('addadmin','auth/authController','crear_admin');
+	$this->newRoute('administrador/datos','administrador/adminController','datosGeneralesadmin');
+
+	$this->newRoute('super-administrador/datos','super/superController','datosGeneralesSuper');
+	$this->newRoute('super-administrador/agregar-administrador','nadmin/nadminController','crear_admin');
+	$this->newRoute('super-administrador/agregar-administrador','nadmin/nadminController','crear_admin','POST');
 
 	
 	//Feed de Noticias
@@ -42,14 +48,15 @@
 	$this->newRoute('alumnos/Descargar','formatos/formatosController','Descargar');
 
 	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin');
-	$this->newRoute('administrador/formatos','formatos/formatosAdminController','formatosAdmin', 'POST');
+	$this->newRoute('administrador/upload','formatos/formatosAdminController','carga','POST');
+	$this->newRoute('administrador/update','formatos/formatosAdminController','actualizar','POST');
 
 	$this->newRoute('alumnos/kardex','kardex/kardexController','getKardex');
 	$this->newRoute('alumnos/calificaciones','calificaciones/calificacionesController','getCalificaciones');
 
 	$this->newRoute('administrador/cargarNoticia','notificaciones/notificacionController','crearNoticia');
 
-	
+
 	// carreras
 
 /*cambiaPass

@@ -793,38 +793,43 @@ table {
   border-radius: 4px;
   background-color: #FFFFFF; }
 
-#modal-formats .modal-content, #modal-edit .modal-content {
+#modal-formats .modal-content, #modal-edit .modal-content, #modal-noticia-edit .modal-content {
   width: 40%;
   position: relative;
   background: #FFFFFF;
   border-radius: 4px; }
-  #modal-formats .modal-content #close-modal, #modal-edit .modal-content #close-modal {
+  #modal-formats .modal-content #close-modal, #modal-edit .modal-content #close-modal, #modal-noticia-edit .modal-content #close-modal {
     position: absolute;
     top: 15px;
     right: 16px;
     color: #FFFFFF; }
-    #modal-formats .modal-content #close-modal:hover, #modal-edit .modal-content #close-modal:hover {
+    #modal-formats .modal-content #close-modal:hover, #modal-edit .modal-content #close-modal:hover, #modal-noticia-edit .modal-content #close-modal:hover {
       color: #20bcc9; }
-    #modal-formats .modal-content #close-modal i, #modal-edit .modal-content #close-modal i {
+    #modal-formats .modal-content #close-modal i, #modal-edit .modal-content #close-modal i, #modal-noticia-edit .modal-content #close-modal i {
       font-size: 2rem; }
-  #modal-formats .modal-content .header-tittle-modal, #modal-edit .modal-content .header-tittle-modal {
+  #modal-formats .modal-content .header-tittle-modal, #modal-edit .modal-content .header-tittle-modal, #modal-noticia-edit .modal-content .header-tittle-modal {
     border-radius: 4px;
     height: 70px; }
-  #modal-formats .modal-content .cargar-archivo, #modal-edit .modal-content .cargar-archivo {
+  #modal-formats .modal-content .cargar-archivo, #modal-edit .modal-content .cargar-archivo, #modal-noticia-edit .modal-content .cargar-archivo {
     border: 1px solid #000; }
-  #modal-formats .modal-content #btn-bottom, #modal-edit .modal-content #btn-bottom {
+  #modal-formats .modal-content #btn-bottom, #modal-edit .modal-content #btn-bottom, #modal-noticia-edit .modal-content #btn-bottom {
     border-radius: 0 0 4px 4px;
     position: relative; }
-  #modal-formats .modal-content .upload-summary, #modal-edit .modal-content .upload-summary {
+  #modal-formats .modal-content .upload-summary, #modal-edit .modal-content .upload-summary, #modal-noticia-edit .modal-content .upload-summary {
     width: 100%; }
+
     #modal-formats .modal-content .upload-summary input, #modal-formats .modal-content .upload-summary .dropzone, #modal-edit .modal-content .upload-summary input, #modal-edit .modal-content .upload-summary .dropzone {
-      width: 80%;
+      width: 90%;
+
+
       background: #FFFFFF;
       border: 1px solid #8e8e8e;
       font-weight: 300; }
-    #modal-formats .modal-content .upload-summary .dropzone, #modal-edit .modal-content .upload-summary .dropzone {
+    #modal-formats .modal-content .upload-summary .dropzone, #modal-edit .modal-content .upload-summary .dropzone, #modal-noticia-edit .modal-content .upload-summary .dropzone {
       font-family: "Heebo", sans-serif; }
-      #modal-formats .modal-content .upload-summary .dropzone i, #modal-edit .modal-content .upload-summary .dropzone i {
+
+      #modal-formats .modal-content .upload-summary .dropzone span > i, #modal-edit .modal-content .upload-summary .dropzone span > i {
+
         display: block;
         margin-bottom: 16px; }
 
@@ -844,7 +849,8 @@ table {
   left: 0;
   z-index: 5; }
   .menu .responsive-img {
-    height: 16%; }
+    width: 170px;
+    height: 160px; }
   .menu .menu-options a {
     padding: 24px;
     margin: auto;
@@ -912,7 +918,8 @@ table {
     padding-left: 0; }
 
   .responsive-img {
-    height: 2%; }
+    width: 50px;
+    height: 100px; }
 
   .menu {
     width: 215px;
@@ -953,6 +960,27 @@ table {
       .menu:focus .smartphone-menu-trigger {
         pointer-events: none; } }
 /*      Páginas      */
+ /**
+    * superadmin.scss
+    * @description: Estilos de la página del superadministrador
+**/
+.container-form {
+  background-color: #FFFFFF;
+  padding: 24px 32px;
+  -webkit-box-shadow: 4px 5px 30px -12px rgba(140, 140, 140, 0.93);
+  -moz-box-shadow: 4px 5px 30px -12px rgba(140, 140, 140, 0.93);
+  box-shadow: 4px 5px 30px -12px rgba(140, 140, 140, 0.93); }
+  .container-form .superadmin-input {
+    padding: 24px;
+    text-align: center; }
+    .container-form .superadmin-input h4 {
+      color: #2C54B3; }
+    .container-form .superadmin-input .input {
+      color: #2C54B3;
+      text-align: center; }
+    .container-form .superadmin-input .input::placeholder {
+      color: #b4b4b4; }
+
 /**
     * calificaciones.scss
     * @description: Estilos de la pagina de calificaciones del alumno

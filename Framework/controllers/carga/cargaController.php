@@ -33,7 +33,11 @@ class CargaController extends Controller
 	public function academicDataMethod()
 	{
 
-        if ($this->validatorAuth($this->auth)) {	
+        if ($this->validatorAuth($this->auth)) {
+
+        	if ($_SESSION['usuario']['type'] == 'admin') {
+        			$this->localRedirect('administador/formatos');
+        		}	
 
         	//$getAcademicData = $this->model->getAcademicData($_SESSION['usuario']['matricula']);
             //var_dump($getAcademicData);

@@ -92,10 +92,10 @@
                                 <div class="column">
                                 <i class="font-triple color-lightBlue fa fa-file"></i>
                                 <div class="white-space-16"></div>
-                                <h3 class="font-text color-darkBlue weight-bold"><?php echo substr($item,1,-5) ?></h3>
+                                <h3 class="font-text color-darkBlue weight-bold"><?php echo explode('.',substr($item,1))[0] ?></h3>
                                 </div>
                             </div>
-                            <a onclick="openModal('modal-edit')" class="hover-file row padding-semi align-center justify-center">
+                            <a onclick="openEditModal('modal-edit','<?php echo substr($item,1) ?>')" class="hover-file row padding-semi align-center justify-center" >
                                 <div class="column">
                                 <i class="font-triple color-white fas fa-file-edit"></i>
                                 <div class="white-space-16"></div>
@@ -128,18 +128,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="upload-summary column">
+                    <div class="upload-summary column align-center">
                         <div class="white-space-24"></div>
-                        <form class="content column justify-center align-center" >
+                        <form class="content column justify-center align-center dropzone" id="myDropzone">
                             <input type="text" name="name_file" placeholder="Nombre del archivo" class="input" required>
                             <div class="white-space-24"></div>
-                            <div class="dropzone" id="myDropzone"></div>
-                            <div class="white-space-24"></div>
-                            <button type="submit" id="submit-all" class="btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white">
-                                <i class="far fa-file-upload icon-btn"></i>
-                                Subir archivo 
-                            </button>
+                            <div class="dropzone-previews" ></div>
                         </form>
+                        <div class="white-space-24"></div>
+                        <button id='submit-file' class='btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white'>
+                            <i class='far fa-file-upload icon-btn'></i>
+                            Subir archivo
+                        </button>
                     </div>
                 <div class="white-space-32"></div>
                 </div>
@@ -163,17 +163,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="upload-summary column">
+                    <div class="upload-summary column align-center">
                         <div class="white-space-24"></div>
-                        <form class="content column justify-center align-center" >
+                        <form class="content column justify-center align-center dropzone" id="myDropzone2">
+                            <input type="hidden" name="name_file_old" id="old_name" value="" >
                             <input type="text" name="name_file" placeholder="Nombre del archivo" class="input" required>
                             <div class="white-space-24"></div>
-                            <div class="dropzone" id="myDropzone"></div>
+                            <div class="dropzone-previews" ></div>
                             <div class="white-space-24"></div>
-                            <button type="submit" id="submit-all" class="btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white">
-                                Guardar Cambios
-                            </button>
                         </form>
+                        <div class="white-space-24"></div>
+                        <button id="update-file" class="btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white">
+                            <i class="far fa-file-upload icon-btn"></i>
+                            Guardar Cambios 
+                        </button>
                     </div>
                 <div class="white-space-32"></div>
                 </div>
@@ -186,24 +189,72 @@
         new WOW().init();
     </script>
     <script type="text/javascript">
+        var button_submit = "<div class='white-space-24'></div> <button id='submit-file' class='btn btn-admin btn-radius btn-large btn-darkBlue bg-darkBlue font-regular weight-bold color-white'> <i class='far fa-file-upload icon-btn'></i>Subir archivo </button>"
         Dropzone.options.myDropzone = {
-            url: 'upload.php',
+            paramName: "file", 
+            url: "<?php echo constant('URL'); ?>administrador/upload",
             autoProcessQueue: false,
-            uploadMultiple: true,
+            uploadMultiple: false,
             parallelUploads: 4,
-            maxFiles: 5,
+            maxFiles: 1,
             maxFilesize: 1,
             addRemoveLinks: true,
             dictDefaultMessage: "<i class='font-triple color-lightBlue fa fa-file'></i> Arrastra o da click aquí para subir un archivo",
             init: function() {
-                dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
+                var dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
                 // for Dropzone to process the queue (instead of default form behavior):
-                document.getElementById("submit-all").addEventListener("click", function(e) {
+                document.querySelector("#submit-file").addEventListener("click", function(e) {
+                    // Make sure that the form isn't actually being sent.
+                    e.preventDefault();
+                    e.stopPropagation();      
+                    dzClosure.processQueue();
+                });
+                
+                this.on("success", function() {
+                // Called after the file successfully uploaded.
+                location.reload(true);
+                });
+            }
+        };
+        Dropzone.options.myDropzone2 = {
+            paramName: "file",
+            url: "<?php echo constant('URL'); ?>administrador/update",
+            autoProcessQueue: false,
+            uploadMultiple: false,
+            parallelUploads: 4,
+            maxFiles: 1,
+            maxFilesize: 1,
+            addRemoveLinks: true,
+            dictDefaultMessage: "<i class='font-triple color-lightBlue fa fa-file'></i> Arrastra o da click aquí para subir un archivo ",
+            init: function() {
+                var dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
+                // for Dropzone to process the queue (instead of default form behavior):
+                document.querySelector("#update-file").addEventListener("click", function(e) {
                     // Make sure that the form isn't actually being sent.
                     e.preventDefault();
                     e.stopPropagation();
                     dzClosure.processQueue();
                 });
+
+                this.on("success", function() {
+                // Called after the file successfully uploaded.
+                location.reload(true);
+                });
+
+            }
+        };
+
+        function openEditModal(id_modal, file) {
+            let modalFormats = document.getElementById(id_modal);
+            if (modalFormats.classList.contains('hidden')) {
+                if (modalFormats.classList.contains('fadeOut')) {
+                    modalFormats.classList.remove('fadeOut');
+                }
+                modalFormats.classList.add('fadeIn');
+                modalFormats.classList.remove('hidden');
+                let old =  document.getElementById("old_name");
+                old.value = file;
+                console.log(old);   
             }
         }
     </script>

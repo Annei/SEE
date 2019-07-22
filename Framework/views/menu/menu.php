@@ -75,9 +75,9 @@
     
                                 <a href="<?php echo constant('URL'); ?>xd" class="item-left" onclick="func();">
                                     <div class="row justify-center">
-                                        <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
+                                        <div class="column icon align-center"><i class="fas fa-chalkboard-teacher"></i></div>
                                         <div class = "column full">
-                                            <h4 class="color-white weight-regular font-small">Correo Institucional</h4>
+                                            <h4 class="color-white weight-regular font-small">Evaluación Docente</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -92,6 +92,7 @@
                                 </a>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <?php
                         include './views/alerts/Headers.php';
                         ?>
@@ -109,3 +110,5 @@
                             }
                         </script>
                         
+=======
+>>>>>>> 1b575ba8313ba156090e113f47bf5dc0d6187e1e

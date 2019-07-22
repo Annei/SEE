@@ -158,18 +158,11 @@ public function getcalif()
 # CAMBIAR CONTRASEÑA
 
 public function cambiaPass(){
+
 	#HOLA, NO SE TE OLVIDE QUE DEBEN ENCRIPTAR LA CONTRASEÑA ;)
-	$this->model->cambiaPass(201600112,'secret');
-
+	$this->model->cambiaPass($_SESSION['usuario']['matricula'], $_POST['name_file']);
+	$this->localRedirect('alumnos/datos');
 }
-
-
-
-
-
-
-
-
 
 }
 ?>
