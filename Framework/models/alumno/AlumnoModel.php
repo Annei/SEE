@@ -373,6 +373,36 @@ public function getPeriodo($clavedeplan)
            return $matter;
        }
    }
+
+   /* Retorna el estatus del alumno
+     * Si encuentra una materia reprobada (calificacion menor a 7)
+     * Regresa como estatus irregular, si no encuentra materias reprobadas 
+     * Regresa como estatus regular
+     * La informacion la obtiene del DBF DKARDE.
+     * Informacion de las columnas del DBF DKARDE:
+     * aluctr   = matricula del alumno
+     * karcal   = calificacion de la materia
+     */
+
+   public function status($matricula){
+
+	$datos = $this->DB->DBFconnect("DKARDE");
+
+	if($datos){
+
+		$numero_registros = dbase_numrecords($datos);
+		for($i = 1; $i <= $numero_registros; $i++){
+			
+			$fila = dbase_get_record_with_names($datos, $i);
+			if(strcmp($fila["ALUCTR"], $matricula) == 0 && $fila["KARCAL"] < 7){
+
+				return "IRREGULAR";  
+			}
+		}
+		return "REGULAR";
+	}
+}
+
 	// FIN PARTE WAKAI
 	/**
 	 * Metodo: procesarDatosPeriodo
@@ -396,6 +426,9 @@ public function getPeriodo($clavedeplan)
 		return $datosGenerales;
 		
 	}
+
+	/**/
+	
 
 	/***
 	 * Metodo: getPeriodoAlumnoIngreso

@@ -72,7 +72,7 @@
                                     <div class="white-space-24"></div>
                                     <h4 class="color-darkgray weight-bold font-small">Estatus</h4>
                                     <p class="color-darkgray weight-regular">
-                                        Regular
+                                     <?php echo $this->status; ?>                                        
                                     </p>
                                     <div class="white-space-24"></div>
                                     <h4 class="color-darkgray weight-bold font-small">Año de ingreso</h4>

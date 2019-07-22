@@ -92,7 +92,6 @@
                                 </a>
                             </div>
                         </div>
-<<<<<<< HEAD
                         <?php
                         include './views/alerts/Headers.php';
                         ?>
@@ -103,12 +102,10 @@
                         swal({
                             title: "Cargando datos",
                             text: "Espere porfavor.....",
-                            imageUrl: './public/img/cargando.gif',
+                            //imageUrl: './public/img/cargando.gif',
                             imageAlt: 'Custom image',
                             timer: 15000
                             });
                             }
                         </script>
                         
-=======
->>>>>>> 1b575ba8313ba156090e113f47bf5dc0d6187e1e

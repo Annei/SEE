@@ -47,6 +47,9 @@ class AlumnoController extends Controller
 			//$this->view->creditos_total = $creditos_total;
 			$periodo = $this->model->getPeriodo($clave);
 			$this->view->periodo = $periodo;
+
+			$status = $this->model->status($_SESSION['usuario']['matricula']);
+			$this->view->status = $status;
 			$this->render();
 		}else{
 			$this->localRedirect('login');
