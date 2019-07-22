@@ -1,5 +1,4 @@
-
-<!--
+|<!--
 *  kardex.html 
 *  @version: 1.0.0
 *  @author: Universidad Politecnica - Jazmin Pool, kath
@@ -125,7 +124,7 @@
                                             <?php
                                             $aux = 0;
                                             foreach ($this->datos as $dato){
-                                                if($aux > 2){
+                                                
                                                     $clave = $dato['claveMat'];
                                                     $materia = $dato['nombreMat'];
                                                     $calificacion = $dato['calfMat'];
@@ -145,7 +144,7 @@
                                                     <td><?php echo $periodo; ?></td>
                                                     <td><?php echo $especial; ?></td>
                                                 <?php
-                                                    }
+                                                    
                                                     $aux = $aux + 1;
                                                 }
                                                 
@@ -173,56 +172,20 @@
                                         </thead>
                                         <tbody class="capitalize">
                                            
+                                            <?php
+                                            foreach ($this->materiasPendientes as $materiaPendiente){
+                                                $claveMateriaPendiente = $materiaPendiente['claveMat'];
+                                                $nombreMateriaPendiente = $materiaPendiente['nombreMat'];
+
+                                            ?>
                                             <tr>
-                                                <td> ADM </td>
-                                                <td> Ecuaciones diferenciales </td>
-                                               
+                                                <td><?php echo $claveMateriaPendiente; ?></td>
+                                                <td><?php echo utf8_encode($nombreMateriaPendiente); ?></td>
                                             </tr>
-                                            
-                                            <tr>
-                                                <td> ADM </td>
-                                                <td> Habilidades organizacionales </td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td> ADM </td>
-                                                <td> Administracion </td>
-                                             
-                                            </tr>
-                                            <tr>
-                                                    <td> ADM </td>
-                                                    <td> Habilidades organizacionales </td>
-                                                   
-                                                </tr>
-                                                <tr>
-                                                    <td> ADM </td>
-                                                    <td> Administracion </td>
-                                                  
-                                                </tr>
-                                                <tr>
-                                                        <td> ADM </td>
-                                                        <td> Habilidades organizacionales </td>
-                                                       
-                                                    </tr>
-                                                    <tr>
-                                                        <td> ADM </td>
-                                                        <td> Administracion </td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                            <td> ADM </td>
-                                                            <td> Habilidades organizacionales </td>
-                                                           
-                                                        </tr>
-                                                        <tr>
-                                                            <td> ADM </td>
-                                                            <td> Administracion </td>
-                                                          
-                                                        </tr>
-                                                       
-                                                            
-                                            
-                                            
+                                            <?php
+                                            }
+
+                                            ?>
                                         </tbody>
                                     </table>
                                     </div>
@@ -248,4 +211,3 @@
     </script> 
 </body>
 </html>
-
