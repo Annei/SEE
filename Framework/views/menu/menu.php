@@ -10,7 +10,7 @@
                         
                         <div class="column main align-center auto">
                             <div class="menu-options">
-                                <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/datos" class="item-left" onclick="func();">
                                     <div class="row justify-center align-start">
                                         <div class="column icon align-center"><i class="fa fa-user"></i></div>
                                         <div class = "column full">
@@ -19,7 +19,7 @@
                                     </div>
                                 </a>
                                 
-                                <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/carga-academica" class="item-left" onclick="func();">
                                     <div class="row justify-center">
                                             <div class="column icon align-center"><i class="fa fa-university"></i></div>
                                         <div class = "column full">
@@ -28,7 +28,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/calificaciones" class="item-left" id="btn" onclick="func();">
                                     <div class="row justify-center">
                                             <div class="column icon align-center"><i class="fa fa-star"></i></div> 
                                         <div class = "column full">
@@ -37,7 +37,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/kardex" class="item-left" id="btn" onclick="func();">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-book-user"></i></div>
                                         <div class="column full">
@@ -46,7 +46,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/horario" class="item-left" id="btn" onclick="func();">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-calendar-alt"></i></div>
                                         <div class = "column full">
@@ -55,7 +55,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>agregarNoticia" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>noticias" class="item-left" onclick="func();">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-newspaper"></i></div>
                                         <div class = "column full">
@@ -64,7 +64,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>alumnos/formatos" class="item-left" id="btn" onclick="func();">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-file-download"></i></div>
                                         <div class = "column full">
@@ -73,7 +73,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>xd" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>xd" class="item-left" onclick="func();">
                                     <div class="row justify-center">
                                         <div class="column icon align-center"><i class="fa fa-mail-bulk"></i></div>
                                         <div class = "column full">
@@ -82,7 +82,7 @@
                                     </div>
                                 </a>
     
-                                <a href="<?php echo constant('URL'); ?>logout" class="item-left">
+                                <a href="<?php echo constant('URL'); ?>logout" class="item-left" >
                                     <div class="row item-left justify-center">
                                         <div class="column icon align-center"><i class="fa fa-sign-out"></i></div>
                                         <div class = "column full">
@@ -92,3 +92,20 @@
                                 </a>
                             </div>
                         </div>
+                        <?php
+                        include './views/alerts/Headers.php';
+                        ?>
+                        <script>
+                        // seleccionamos el enlace 
+                        function func() {
+                        //alert("Hello! I am an alert box!");
+                        swal({
+                            title: "Cargando datos",
+                            text: "Espere porfavor.....",
+                            imageUrl: './public/img/cargando.gif',
+                            imageAlt: 'Custom image',
+                            timer: 15000
+                            });
+                            }
+                        </script>
+                        
