@@ -109,6 +109,7 @@
                                 $parcial3 = $calificacion['Parcial3'];
                                 $parcial4 = $calificacion['Parcial4'];
                                 $parcial5 = $calificacion['Parcial5'];
+                                $promedio = $calificacion['Promedio'];
                                 $clave = $calificacion['Clave'];
                             ?>
 
@@ -144,9 +145,9 @@
                                                 <tr>
                                                     <td class="uppercase"><?php echo $clave; ?></td>
                                                     <td>-</td>
-                                                    <td>9.0</td>
-                                                    <td>09</td>
-                                                    <td>9.0</td>
+                                                    <td><?php echo $promedio; ?></td>
+                                                    <td><?php echo $this->cuatrimestre['estudia']; ?></td>
+                                                    <td>-</td>
                                                     <td><?php echo $parcial1; ?></td>
                                                     <td><?php echo $parcial2; ?></td>
                                                     <td><?php echo $parcial3; ?></td>
