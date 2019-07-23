@@ -38,7 +38,7 @@
                                 <div class="row auto">
                                         <button type="submit" class="btn btn-admin bg-darkBlue color-white font-regular weight-semi">
                                             <i class="fas fa-print icon-btn"></i>
-                                            Imprimir kardex
+                                            <a href="<?php echo constant('URL'); ?>alumnos/kardexPdf">Imprimir kardex</a>
                                         </button>
                                 </div>
                             </div>
